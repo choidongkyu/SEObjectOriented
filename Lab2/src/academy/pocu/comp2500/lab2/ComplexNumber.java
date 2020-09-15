@@ -1,8 +1,8 @@
 package academy.pocu.comp2500.lab2;
 
 public class ComplexNumber {
-    final double real;
-    final double imaginary;
+    public final double real;
+    public final double imaginary;
 
 
     public ComplexNumber() {
@@ -28,7 +28,7 @@ public class ComplexNumber {
     }
 
     public boolean isImaginary() {
-        if (real != 0.0 || imaginary == 0.0) {
+        if (real != 0.0) {
             return false;
         }
         return true;
