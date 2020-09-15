@@ -53,9 +53,9 @@ public class ComplexNumber {
 
     public ComplexNumber divide(ComplexNumber other) {
         double i = Math.pow(other.real, 2) + Math.pow(other.imaginary, 2);
-        double _real = ((real * other.real) + (imaginary * other.imaginary)) / i;
-        double _imaginary = ((imaginary * other.real) - (real * other.imaginary)) / i;
-        return new ComplexNumber(_real, _imaginary);
+        double realnumber = ((real * other.real) + (imaginary * other.imaginary)) / i;
+        double imaginarynumber = ((imaginary * other.real) - (real * other.imaginary)) / i;
+        return new ComplexNumber(realnumber, imaginarynumber);
     }
 
     public void print() {
