@@ -49,8 +49,8 @@ public class Comment implements Comparable<Comment> {
         }
     }
 
-    public void addSubComment(SubComment subComment) {
-        this.subCommentList.add(subComment);
+    public void addSubComment(SubComment subcomment) {
+        this.subCommentList.add(subcomment);
     }
 
     public ArrayList<SubComment> getSubCommentList() {
