@@ -20,6 +20,14 @@ public class Comment {
         this.doubleVotingList = new ArrayList<>();
     }
 
+    public int getGood() {
+        return good;
+    }
+
+    public int getBad() {
+        return bad;
+    }
+
     public String getUser() {
         return user;
     }

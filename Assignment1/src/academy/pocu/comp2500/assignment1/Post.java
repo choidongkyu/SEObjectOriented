@@ -3,6 +3,7 @@ package academy.pocu.comp2500.assignment1;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Post {
     private final ArrayList<Comment> commentList;
@@ -15,6 +16,7 @@ public class Post {
     private int great;
     private int sad;
     private int angry;
+    private int fun;
     private int love;
 
     public Post(String title, String body, String user) {
@@ -28,6 +30,7 @@ public class Post {
         this.great = 0;
         this.sad = 0;
         this.angry = 0;
+        this.fun = 0;
         this.love = 0;
     }
 
@@ -82,7 +85,17 @@ public class Post {
     }
 
     public ArrayList<Comment> getComment() {
-        Collections.sort(commentList);
+        commentList.sort(new Comparator<Comment>() {
+            @Override
+            public int compare(Comment o1, Comment o2) {
+                if ((o1.getGood() - o1.getBad()) > (o2.getGood() - o2.getBad())) {
+                    return -1;
+                } else if ((o1.getGood() - o1.getBad()) < (o2.getGood() - o2.getBad())) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
         /*for(Comment comment : commentList) {
             System.out.println("댓글 user : "+ comment.getUser()+"\n"+
                                "text : "+comment.getCommentText());
@@ -102,6 +115,9 @@ public class Post {
             case "angry":
                 ++angry;
                 break;
+            case "fun":
+                ++fun;
+                break;
             case "love":
                 ++love;
                 break;
@@ -120,6 +136,9 @@ public class Post {
             case "angry":
                 --angry;
                 break;
+            case "fun":
+                --fun;
+                break;
             case "love":
                 --love;
                 break;
@@ -135,6 +154,8 @@ public class Post {
                 return sad;
             case "angry":
                 return angry;
+            case "fun":
+                return fun;
             case "love":
                 return love;
             default:
