@@ -2,13 +2,23 @@ package academy.pocu.comp2500.assignment1;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
-public class SubComment implements Comparable<SubComment> {
+public class SubComment {
     private final ArrayList<SubComment> subCommentList;
     private final String user;
     private String text;
     private final ArrayList<String> doubleVotingList;
     private int good;
+
+    public int getBad() {
+        return bad;
+    }
+
+    public int getGood() {
+        return good;
+    }
+
     private int bad;
 
     public SubComment(String user, String text) {
@@ -53,21 +63,21 @@ public class SubComment implements Comparable<SubComment> {
     }
 
     public ArrayList<SubComment> getSubCommentList() {
-        Collections.sort(subCommentList);
+        subCommentList.sort(new Comparator<SubComment>() {
+            @Override
+            public int compare(SubComment o1, SubComment o2) {
+                if ((o1.good - o1.bad) > (o2.good - o2.bad)) {
+                    return -1;
+                } else if ((o1.good - o1.bad) < (o2.good - o2.bad)) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
         /*for(SubComment comment : subCommentList) {
             System.out.println("대댓글 user : "+ comment.getUser()+"\n"+
                     "text : "+comment.getSubCommentText());
         }*/
         return subCommentList;
-    }
-
-    @Override
-    public int compareTo(SubComment subcomment) {
-        if ((this.good - this.bad) > (subcomment.good - subcomment.bad)) {
-            return -1;
-        } else if ((this.good - this.bad) < (subcomment.good - subcomment.bad)) {
-            return 1;
-        }
-        return 0;
     }
 }

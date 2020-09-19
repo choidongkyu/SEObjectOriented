@@ -17,7 +17,7 @@ public class Blog {
     public Blog() {
         this.postList = new ArrayList<>();
         this.tagFilter = new ArrayList<>();
-        this.authorFilter = null;
+        this.authorFilter = "";
         this.sortingType = CREATED_ASC;
     }
 
@@ -78,7 +78,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByUser(ArrayList<Post> list) {
-        if (authorFilter == null) {
+        if (authorFilter == null || authorFilter.equals("")) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
