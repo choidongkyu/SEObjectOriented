@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Blog {
-    public static final int CREATED_ASC = 0;
-    public static final int CREATED_DEC = 1;
-    public static final int MODIFIED_ASC = 2;
-    public static final int MODIFIED_DEC = 3;
-    public static final int DICTIONARY_ORDER = 4;
+    private static final int CREATED_ASC = 0;
+    private static final int CREATED_DEC = 1;
+    private static final int MODIFIED_ASC = 2;
+    private static final int MODIFIED_DEC = 3;
+    private static final int DICTIONARY_ORDER = 4;
     private ArrayList<Post> postList;
     private final ArrayList<String> tagFilter;
     private String userFilter;

@@ -6,15 +6,15 @@ import java.util.Collections;
 public class SubComment implements Comparable<SubComment> {
     private final ArrayList<SubComment> subCommentList;
     private final String user;
-    private String subCommentText;
+    private String text;
     private final ArrayList<String> doubleVotingList;
     private int good;
     private int bad;
 
-    public SubComment(String user, String subCommentText) {
+    public SubComment(String user, String text) {
         this.subCommentList = new ArrayList<>();
         this.user = user;
-        this.subCommentText = subCommentText;
+        this.text = text;
         this.good = 0;
         this.bad = 0;
         this.doubleVotingList = new ArrayList<>();
@@ -24,13 +24,13 @@ public class SubComment implements Comparable<SubComment> {
         return user;
     }
 
-    public String getSubCommentText() {
-        return subCommentText;
+    public String getText() {
+        return text;
     }
 
-    public void setSubCommentText(String commentText, String user) {
+    public void setText(String text, String user) {
         if (user.equals(this.user)) {
-            this.subCommentText = commentText;
+            this.text = text;
         }
     }
 
