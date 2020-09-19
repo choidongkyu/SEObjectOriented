@@ -11,13 +11,13 @@ public class Blog {
     private static final int DICTIONARY_ORDER = 4;
     private ArrayList<Post> postList;
     private final ArrayList<String> tagFilter;
-    private String userFilter;
+    private String authorFilter;
     private int sortingType;
 
     public Blog() {
         this.postList = new ArrayList<>();
         this.tagFilter = new ArrayList<>();
-        this.userFilter = null;
+        this.authorFilter = null;
         this.sortingType = CREATED_ASC;
     }
 
@@ -34,15 +34,15 @@ public class Blog {
     }
 
     public String getUserFilter() {
-        return userFilter;
+        return authorFilter;
     }
 
-    public void setUserFilter(String userFilterOrNull) {
-        this.userFilter = userFilterOrNull;
+    public void setUserFilter(String authorOrNull) {
+        this.authorFilter = authorOrNull;
     }
 
     public void unsetUserFilter() {
-        this.userFilter = null;
+        this.authorFilter = null;
     }
 
     public int getSortingType() {
@@ -78,12 +78,12 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByUser(ArrayList<Post> list) {
-        if (userFilter == null) {
+        if (authorFilter == null) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
         for (Post post : list) {
-            if (post.getUser().equals(userFilter)) {
+            if (post.getUser().equals(authorFilter)) {
                 result.add(post);
             }
         }
