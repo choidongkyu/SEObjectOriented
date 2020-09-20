@@ -61,13 +61,14 @@ public class Comment {
     }
 
     public ArrayList<Comment> getSubCommentList() {
-        subCommentList.sort((o1, o2)->compareTo((o1.good - o1.bad),(o2.good - o2.bad)));
-        for(Comment comment : subCommentList) {
-            System.out.println("대댓글 user : "+ comment.getUser()+"\n"+
-                    "text : "+comment.getText());
+        subCommentList.sort((o1, o2) -> compareTo((o1.good - o1.bad), (o2.good - o2.bad)));
+        for (Comment comment : subCommentList) {
+            System.out.println("대댓글 user : " + comment.getUser() + "\n" +
+                    "text : " + comment.getText());
         }
         return subCommentList;
     }
+
     private int compareTo(int a, int b) {
         if (a > b) {
             return -1;

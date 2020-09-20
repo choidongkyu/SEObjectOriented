@@ -85,20 +85,10 @@ public class Post {
     }
 
     public ArrayList<Comment> getComment() {
-        commentList.sort(new Comparator<Comment>() {
-            @Override
-            public int compare(Comment o1, Comment o2) {
-                if ((o1.getGood() - o1.getBad()) > (o2.getGood() - o2.getBad())) {
-                    return -1;
-                } else if ((o1.getGood() - o1.getBad()) < (o2.getGood() - o2.getBad())) {
-                    return 1;
-                }
-                return 0;
-            }
-        });
-        for(Comment comment : commentList) {
-            System.out.println("댓글 user : "+ comment.getUser()+"\n"+
-                               "text : "+comment.getText());
+        commentList.sort((a, b) -> compareTo(a.getGood() - a.getBad(), b.getGood() - b.getBad()));
+        for (Comment comment : commentList) {
+            System.out.println("댓글 user : " + comment.getUser() + "\n" +
+                    "text : " + comment.getText());
             comment.getSubCommentList();
         }
         return this.commentList;
@@ -161,5 +151,14 @@ public class Post {
             default:
         }
         return Integer.MIN_VALUE;
+    }
+
+    private int compareTo(int a, int b) {
+        if (a > b) {
+            return -1;
+        } else if (a < b) {
+            return 1;
+        }
+        return 0;
     }
 }
