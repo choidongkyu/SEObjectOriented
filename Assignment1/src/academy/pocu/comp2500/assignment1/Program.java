@@ -31,7 +31,7 @@ public class Program {
        Post p3 = new Post("차","테스트","오맹");
        sleep(1);
        b1.addPost(p1);
-       b1.setSortingType(Blog.DICTIONARY_ORDER);
+       b1.setSortingType("DICTIONARY_ORDER");
        //b1.getPost().get(0).setBody("수정함","최동규");
        b1.getPost();
     }
