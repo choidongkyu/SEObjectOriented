@@ -96,19 +96,19 @@ public class Post {
 
     public void addReaction(String reactionType) {
         switch (reactionType) {
-            case "great":
+            case "Great":
                 ++great;
                 break;
-            case "sad":
+            case "Sad":
                 ++sad;
                 break;
-            case "angry":
+            case "Angry":
                 ++angry;
                 break;
-            case "fun":
+            case "Fun":
                 ++fun;
                 break;
-            case "love":
+            case "Love":
                 ++love;
                 break;
             default:
@@ -117,19 +117,19 @@ public class Post {
 
     public void removeReaction(String reactionType) {
         switch (reactionType) {
-            case "great":
+            case "Great":
                 --great;
                 break;
-            case "sad":
+            case "Sad":
                 --sad;
                 break;
-            case "angry":
+            case "Angry":
                 --angry;
                 break;
-            case "fun":
+            case "Fun":
                 --fun;
                 break;
-            case "love":
+            case "Love":
                 --love;
                 break;
             default:
@@ -138,15 +138,15 @@ public class Post {
 
     public int getReaction(String reactionType) {
         switch (reactionType) {
-            case "great":
+            case "Great":
                 return great;
-            case "sad":
+            case "Sad":
                 return sad;
-            case "angry":
+            case "Angry":
                 return angry;
-            case "fun":
+            case "Fun":
                 return fun;
-            case "love":
+            case "Love":
                 return love;
             default:
         }
