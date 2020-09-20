@@ -25,8 +25,8 @@ public class Blog {
         return this.tagFilter;
     }
 
-    public void unsetTagFilter(String tag) {
-        tagFilter.remove(tag);
+    public void unsetTagFilter() {
+        tagFilter.clear();
     }
 
     public String getUserFilter() {
