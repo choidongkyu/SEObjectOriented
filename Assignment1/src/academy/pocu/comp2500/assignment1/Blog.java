@@ -1,14 +1,15 @@
 package academy.pocu.comp2500.assignment1;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Blog {
-    private static final int CREATED_ASC = 0;
-    private static final int CREATED_DEC = 1;
-    private static final int MODIFIED_ASC = 2;
-    private static final int MODIFIED_DEC = 3;
-    private static final int DICTIONARY_ORDER = 4;
+    public static final int CREATED_ASC = 0;
+    public static final int CREATED_DEC = 1;
+    public static final int MODIFIED_ASC = 2;
+    public static final int MODIFIED_DEC = 3;
+    public static final int DICTIONARY_ORDER = 4;
     private ArrayList<Post> postList;
     private final ArrayList<String> tagFilter;
     private String authorFilter;
@@ -58,7 +59,7 @@ public class Blog {
         postList = sortPostList(postList);
         postList = filteringByUser(postList);
         postList = filteringByTag(postList);
-        /*for (Post post : postList) {
+        for (Post post : postList) {
             System.out.println("Post 제목 : " + post.getTitle() + "\n" +
                     "내용 : " + post.getBody() + "\n" +
                     "user : " + post.getUser() + "\n" +
@@ -69,7 +70,7 @@ public class Blog {
                 System.out.println(tag);
             }
             post.getComment();
-        }*/
+        }
         return postList;
     }
 
@@ -101,68 +102,31 @@ public class Blog {
                     result.add(post);
                 }
             }
-
         }
         return result;
     }
 
     private ArrayList<Post> sortPostList(ArrayList<Post> list) {
         if (sortingType == CREATED_ASC) {
-            list.sort(new Comparator<Post>() {
-                @Override
-                public int compare(Post o1, Post o2) {
-                    if (o1.getCreatedDateTime().isBefore(o2.getCreatedDateTime())) {
-                        return -1;
-                    } else if (o1.getCreatedDateTime().isAfter(o2.getCreatedDateTime())) {
-                        return 1;
-                    }
-                    return 0;
-                }
-            });
+            list.sort((a, b) -> compareTo(a, b));
         } else if (sortingType == CREATED_DEC) {
-            list.sort(new Comparator<Post>() {
-                @Override
-                public int compare(Post o1, Post o2) {
-                    if (o1.getCreatedDateTime().isAfter(o2.getCreatedDateTime())) {
-                        return -1;
-                    } else if (o1.getCreatedDateTime().isBefore(o2.getCreatedDateTime())) {
-                        return 1;
-                    }
-                    return 0;
-                }
-            });
+            list.sort((a, b) -> compareTo(b, a));
         } else if (sortingType == MODIFIED_ASC) {
-            list.sort(new Comparator<Post>() {
-                @Override
-                public int compare(Post o1, Post o2) {
-                    if (o1.getModifiedDateTime().isBefore(o2.getModifiedDateTime())) {
-                        return -1;
-                    } else if (o1.getModifiedDateTime().isAfter(o2.getModifiedDateTime())) {
-                        return 1;
-                    }
-                    return 0;
-                }
-            });
+            list.sort((a, b) -> compareTo(a, b));
         } else if (sortingType == MODIFIED_DEC) {
-            list.sort(new Comparator<Post>() {
-                @Override
-                public int compare(Post o1, Post o2) {
-                    if (o1.getModifiedDateTime().isAfter(o2.getModifiedDateTime())) {
-                        return -1;
-                    } else if (o1.getModifiedDateTime().isBefore(o2.getModifiedDateTime())) {
-                        return 1;
-                    }
-                    return 0;
-                }
-            });
+            list.sort((a, b) -> compareTo(b, a));
         } else if (sortingType == DICTIONARY_ORDER) {
-            list.sort(new Comparator<Post>() {
-                @Override
-                public int compare(Post o1, Post o2) {
-                    return o1.getTitle().compareTo(o2.getTitle());
-                }
-            });
+            list.sort((a, b) -> a.getTitle().compareTo(b.getTitle()));
         }
         return list;
+    }
+
+    private int compareTo(Post a, Post b) {
+        if (a.getModifiedDateTime().isBefore(b.getModifiedDateTime())) {
+            return -1;
+        } else if (a.getModifiedDateTime().isAfter(b.getModifiedDateTime())) {
+            return 1;
+        }
+        return 0;
     }
 }

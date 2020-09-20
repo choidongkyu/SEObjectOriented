@@ -96,11 +96,11 @@ public class Post {
                 return 0;
             }
         });
-        /*for(Comment comment : commentList) {
+        for(Comment comment : commentList) {
             System.out.println("댓글 user : "+ comment.getUser()+"\n"+
-                               "text : "+comment.getCommentText());
+                               "text : "+comment.getText());
             comment.getSubCommentList();
-        }*/
+        }
         return this.commentList;
     }
 
