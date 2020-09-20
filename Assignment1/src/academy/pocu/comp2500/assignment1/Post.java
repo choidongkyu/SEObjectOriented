@@ -94,59 +94,59 @@ public class Post {
         return this.comment;
     }
 
-    public void addReaction(String reactionType) {
+    public void addReaction(Reaction reactionType) {
         switch (reactionType) {
-            case "Great":
+            case GREAT:
                 ++great;
                 break;
-            case "Sad":
+            case SAD:
                 ++sad;
                 break;
-            case "Angry":
+            case ANGRY:
                 ++angry;
                 break;
-            case "Fun":
+            case FUN:
                 ++fun;
                 break;
-            case "Love":
+            case LOVE:
                 ++love;
                 break;
             default:
         }
     }
 
-    public void removeReaction(String reactionType) {
+    public void removeReaction(Reaction reactionType) {
         switch (reactionType) {
-            case "Great":
+            case GREAT:
                 --great;
                 break;
-            case "Sad":
+            case SAD:
                 --sad;
                 break;
-            case "Angry":
+            case ANGRY:
                 --angry;
                 break;
-            case "Fun":
+            case FUN:
                 --fun;
                 break;
-            case "Love":
+            case LOVE:
                 --love;
                 break;
             default:
         }
     }
 
-    public int getReaction(String reactionType) {
+    public int getReaction(Reaction reactionType) {
         switch (reactionType) {
-            case "Great":
+            case GREAT:
                 return great;
-            case "Sad":
+            case SAD:
                 return sad;
-            case "Angry":
+            case ANGRY:
                 return angry;
-            case "Fun":
+            case FUN:
                 return fun;
-            case "Love":
+            case LOVE:
                 return love;
             default:
         }

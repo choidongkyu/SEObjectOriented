@@ -30,7 +30,8 @@ public class Program {
        p2.addTag("요리","채혜인");
        Post p3 = new Post("차","테스트","오맹");
        sleep(1);
-       b1.addPost(p1);
+       p3.addReaction(Reaction.GREAT);
+       b1.addPost(p3);
        b1.setSortingType("DICTIONARY_ORDER");
        //b1.getPost().get(0).setBody("수정함","최동규");
        b1.getPost();
