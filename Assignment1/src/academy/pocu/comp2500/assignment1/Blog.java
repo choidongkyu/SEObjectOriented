@@ -17,8 +17,11 @@ public class Blog {
         this.sortingType = Order.CREATED_ASC;
     }
 
-    public void setTagFilter(String tag) {
-        this.tagFilter.add(tag);
+    public void setTagFilter(String tagOrNull) {
+        if(tagOrNull == null) {
+            tagFilter.clear();
+        }
+        this.tagFilter.add(tagOrNull);
     }
 
     public ArrayList<String> getTagFilter() {
