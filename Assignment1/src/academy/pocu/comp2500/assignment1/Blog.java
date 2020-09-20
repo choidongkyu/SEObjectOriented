@@ -51,7 +51,7 @@ public class Blog {
 
     public ArrayList<Post> getPost() {
         //TODO
-        postList = sortPostList(postList);
+        sortPostList(postList);
         postList = filteringByUser(postList);
         postList = filteringByTag(postList);
         for (Post post : postList) {
@@ -90,14 +90,17 @@ public class Blog {
         if (tagFilter.size() == 0) {
             return list;
         }
+
         ArrayList<Post> result = new ArrayList<>();
         for (Post post : list) {
             for (String s : tagFilter) {
                 if (post.getTagList().contains(s)) {
                     result.add(post);
+                    break;
                 }
             }
         }
+
         return result;
     }
 
