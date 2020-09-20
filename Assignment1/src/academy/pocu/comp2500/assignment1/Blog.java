@@ -18,9 +18,9 @@ public class Blog {
     }
 
     public void setTagFilter(String tagOrNull) {
-        if(tagOrNull == null) {
+        if (tagOrNull == null) {
             tagFilter.clear();
-            return ;
+            return;
         }
         this.tagFilter.add(tagOrNull);
     }

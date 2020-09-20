@@ -19,24 +19,15 @@ public class Program {
         b1.addPost(p2);
         b1.addPost(p3);
         //b1.addPost(p4);
-        p1.addTag("t1","a1");
-        p2.addTag("t2","a1");
-        p3.addTag("t1","a2");
-        p3.addTag("t2","a2");
+        //p1.addTag("t1","a1");
+        //p1.addTag("용기","a1");
+        //p2.addTag("t2","a1");
+        //p3.addTag("t1","a2");
+        //p3.addTag("t2","a2");
         //p4.addTag("t2","a2");
+        b1.setTagFilter("t4");
         b1.setTagFilter("t2");
-        b1.setTagFilter("t1");
-        b1.unsetTagFilter();
-        b1.setTagFilter("t1");
-        b1.unsetTagFilter();
-        b1.setUserFilter("a1");
-        b1.unsetUserFilter();
-        b1.setTagFilter("t1");
-        b1.setUserFilter("a2");
-        b1.unsetTagFilter();
-        b1.unsetUserFilter();
-        b1.setTagFilter("t2");
-        b1.setUserFilter("a1");
+        b1.setTagFilter("t3");
         b1.getPost();
     }
 }

@@ -68,8 +68,8 @@ public class Post {
         }
     }
 
-    public void addTag(String tag, String user) {
-        if (this.user.equals(user)) {
+    public void addTag(String tag) {
+        if (true/*this.user.equals(user)*/) {
             if (!this.tagList.contains(tag)) {
                 this.tagList.add(tag);
             }
