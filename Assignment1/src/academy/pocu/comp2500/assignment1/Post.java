@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Post {
-    private final ArrayList<Comment> commentList;
+    private final ArrayList<Comment> comment;
     private final ArrayList<String> tagList;
     private String title;
     private String body;
@@ -23,7 +23,7 @@ public class Post {
         this.title = title;
         this.body = body;
         this.user = user;
-        this.commentList = new ArrayList<>();
+        this.comment = new ArrayList<>();
         this.tagList = new ArrayList<>();
         this.createdDateTime = OffsetDateTime.now();
         this.modifiedDateTime = OffsetDateTime.now();
@@ -81,17 +81,17 @@ public class Post {
     }
 
     public void addComment(Comment comment) {
-        this.commentList.add(comment);
+        this.comment.add(comment);
     }
 
     public ArrayList<Comment> getComment() {
-        commentList.sort((a, b) -> compareTo(a.getGood() - a.getBad(), b.getGood() - b.getBad()));
-        for (Comment comment : commentList) {
+        comment.sort((a, b) -> compareTo(a.getGood() - a.getBad(), b.getGood() - b.getBad()));
+        for (Comment comment : comment) {
             System.out.println("댓글 user : " + comment.getUser() + "\n" +
                     "text : " + comment.getText());
-            comment.getSubCommentList();
+            comment.getSubComment();
         }
-        return this.commentList;
+        return this.comment;
     }
 
     public void addReaction(String reactionType) {

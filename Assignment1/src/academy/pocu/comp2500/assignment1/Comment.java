@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Comment {
-    private ArrayList<Comment> subCommentList;
+    private final ArrayList<Comment> subComment;
     private final String user;
     private String text;
     private final ArrayList<String> doubleVotingList;
@@ -12,7 +12,7 @@ public class Comment {
     private int bad;
 
     public Comment(String user, String text) {
-        this.subCommentList = new ArrayList<>();
+        this.subComment = new ArrayList<>();
         this.user = user;
         this.text = text;
         this.good = 0;
@@ -56,17 +56,17 @@ public class Comment {
         }
     }
 
-    public void addSubComment(Comment subcomment) {
-        this.subCommentList.add(subcomment);
+    public void addSubComment(Comment comment) {
+        this.subComment.add(comment);
     }
 
-    public ArrayList<Comment> getSubCommentList() {
-        subCommentList.sort((o1, o2) -> compareTo((o1.good - o1.bad), (o2.good - o2.bad)));
-        for (Comment comment : subCommentList) {
+    public ArrayList<Comment> getSubComment() {
+        subComment.sort((o1, o2) -> compareTo((o1.good - o1.bad), (o2.good - o2.bad)));
+        for (Comment comment : subComment) {
             System.out.println("대댓글 user : " + comment.getUser() + "\n" +
                     "text : " + comment.getText());
         }
-        return subCommentList;
+        return subComment;
     }
 
     private int compareTo(int a, int b) {

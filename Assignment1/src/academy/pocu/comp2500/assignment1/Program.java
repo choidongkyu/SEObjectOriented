@@ -18,6 +18,7 @@ public class Program {
        Comment comment2 = new Comment("1","사랑해요");
        Comment comment3 = new Comment("3","사랑해요");
        comment.addSubComment(new Comment("식충이","냐옹"));
+       comment3.addSubComment(new Comment("qqq","qqq"));
        comment3.upVoter("wer");
        comment3.upVoter("we1r");
        comment.downVoter("werqq");
