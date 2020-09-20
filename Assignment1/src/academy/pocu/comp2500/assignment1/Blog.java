@@ -20,6 +20,7 @@ public class Blog {
     public void setTagFilter(String tagOrNull) {
         if(tagOrNull == null) {
             tagFilter.clear();
+            return ;
         }
         this.tagFilter.add(tagOrNull);
     }
