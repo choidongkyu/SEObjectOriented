@@ -62,10 +62,10 @@ public class Comment {
 
     public ArrayList<Comment> getSubComment() {
         subComment.sort((o1, o2) -> compareTo((o1.good - o1.bad), (o2.good - o2.bad)));
-        for (Comment comment : subComment) {
+        /*for (Comment comment : subComment) {
             System.out.println("대댓글 user : " + comment.getUser() + "\n" +
                     "text : " + comment.getText());
-        }
+        }*/
         return subComment;
     }
 

@@ -22,6 +22,9 @@ public class Blog {
             tagFilter.clear();
             return;
         }
+        if (tagFilter.contains(tagOrNull)) {
+            return;
+        }
         this.tagFilter.add(tagOrNull);
     }
 
@@ -98,11 +101,10 @@ public class Blog {
         if (tagFilter.size() == 0) {
             return list;
         }
-
         ArrayList<Post> result = new ArrayList<>();
         for (Post post : list) {
-            for (String s : tagFilter) {
-                if (post.getTagList().contains(s)) {
+            for (String s : post.getTagList()) {
+                if (tagFilter.contains(s)) {
                     result.add(post);
                     break;
                 }

@@ -68,8 +68,8 @@ public class Post {
         }
     }
 
-    public void addTag(String tag) {
-        if (true/*this.user.equals(user)*/) {
+    public void addTag(String tag, String user) {
+        if (this.user.equals(user)) {
             if (!this.tagList.contains(tag)) {
                 this.tagList.add(tag);
             }
@@ -86,11 +86,11 @@ public class Post {
 
     public ArrayList<Comment> getComment() {
         comment.sort((a, b) -> compareTo(a.getGood() - a.getBad(), b.getGood() - b.getBad()));
-        for (Comment comment : comment) {
+        /*for (Comment comment : comment) {
             System.out.println("댓글 user : " + comment.getUser() + "\n" +
                     "text : " + comment.getText());
             comment.getSubComment();
-        }
+        }*/
         return this.comment;
     }
 
