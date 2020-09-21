@@ -22,10 +22,9 @@ public class Blog {
             tagFilter.clear();
             return;
         }
-        if (tagFilter.contains(tagOrNull)) {
-            return;
+        if (!tagFilter.contains(tagOrNull)) {
+            this.tagFilter.add(tagOrNull);
         }
-        this.tagFilter.add(tagOrNull);
     }
 
     public ArrayList<String> getTagFilter() {
@@ -110,7 +109,6 @@ public class Blog {
                 }
             }
         }
-
         return result;
     }
 
