@@ -20,13 +20,12 @@ public class Blog {
 
     public void setTagFilter(List<String> tags) {
         for (String s : tags) {
-            if (s == null || s.equals("")) {
-                tagFilter.clear();
-                return;
+            if (s != null && !s.equals("")) {
+                if (!tagFilter.contains(s)) {
+                    this.tagFilter.add(s);
+                }
             }
-            if (!tagFilter.contains(s)) {
-                this.tagFilter.add(s);
-            }
+
         }
     }
 
