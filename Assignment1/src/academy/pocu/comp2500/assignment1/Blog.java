@@ -39,10 +39,6 @@ public class Blog {
         this.authorFilter = authorOrNull;
     }
 
-    public void unsetUserFilter() {
-        this.authorFilter = null;
-    }
-
     public Order getSortingType() {
         return sortingType;
     }
