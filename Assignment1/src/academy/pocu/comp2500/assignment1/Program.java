@@ -25,18 +25,11 @@ public class Program {
         b1.addPost(p1);
         b1.addPost(p2);
         b1.addPost(p3);
+        b1.addPost(p4);
         List tag = new ArrayList();
-        tag.add("t2");
-
-        b1.setTagFilter(tag);
-        b1.setTagFilter(null);
-        //tag.add("t2");
-        b1.setTagFilter(tag);
-        tag.clear();
-        b1.setTagFilter(null);
         tag.add("t1");
-        tag.add("t2");
         b1.setTagFilter(tag);
+        b1.setUserFilter("a2");
 
 
         b1.getPost();

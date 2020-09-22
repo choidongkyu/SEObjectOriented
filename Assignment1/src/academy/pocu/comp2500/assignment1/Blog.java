@@ -18,12 +18,12 @@ public class Blog {
         this.sortingType = Order.CREATED_ASC;
     }
 
-    public void setTagFilter(List<String> tagOrNull) {
-        if (tagOrNull == null) {
+    public void setTagFilter(List<String> tags) {
+        if (tags == null) {
             tagFilter.clear();
             return;
         }
-        for (String s : tagOrNull) {
+        for (String s : tags) {
             if (s == null || s.equals("")) {
                 return;
             }
