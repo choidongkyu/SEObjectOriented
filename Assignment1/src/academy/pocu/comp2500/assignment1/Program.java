@@ -27,12 +27,12 @@ public class Program {
         p3.addTag("우정","채혜인");
         p4.addTag("게임","오맹");
         //b1.setTagFilter("게임");
-        b1.setTagFilter("t1");
-        //b1.setTagFilter("t2");
-        //b1.setTagFilter("t6");
-        //b1.setTagFilter("t7");
+        b1.setTagFilter("사랑");
+        b1.setTagFilter(null);
+        b1.setTagFilter("용기");
+        b1.setTagFilter("t7");
         //b1.setTagFilter("t3");
-        b1.setTagFilter("");
+        //b1.setTagFilter("");
         b1.getPost();
     }
 }

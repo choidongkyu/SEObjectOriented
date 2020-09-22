@@ -76,7 +76,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByUser(ArrayList<Post> list) {
-        if (authorFilter == null || authorFilter.equals("")) {
+        if (authorFilter == null) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
