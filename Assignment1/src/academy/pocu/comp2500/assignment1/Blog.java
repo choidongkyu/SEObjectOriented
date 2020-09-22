@@ -31,14 +31,6 @@ public class Blog {
         return this.tagFilter;
     }
 
-    public void unsetTagFilter(String tagOrNull) {
-        if (tagOrNull == null) {
-            tagFilter.clear();
-            return;
-        }
-        tagFilter.remove(tagOrNull);
-    }
-
     public String getUserFilter() {
         return authorFilter;
     }
