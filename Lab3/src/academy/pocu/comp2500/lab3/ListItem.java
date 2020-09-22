@@ -51,7 +51,6 @@ public class ListItem {
             result += "\n";
             result += item.toString();
         }
-
         return result;
     }
 }

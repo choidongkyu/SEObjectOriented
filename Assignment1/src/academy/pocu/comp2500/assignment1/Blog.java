@@ -96,7 +96,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByTag(ArrayList<Post> list) {
-        if (tagFilter.size() == 0) {
+        if (tagFilter.isEmpty()) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
