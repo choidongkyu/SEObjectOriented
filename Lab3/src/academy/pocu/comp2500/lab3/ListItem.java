@@ -46,11 +46,12 @@ public class ListItem {
     }
 
     public String toString() {
-        String result = bulletStyle +" "+ text;
-        for(ListItem s : sublistItems) {
+        String result = bulletStyle + " " + text;
+        for (ListItem item : sublistItems) {
             result += "\n";
-            result += s.toString();
+            result += item.toString();
         }
+
         return result;
     }
 }

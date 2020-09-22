@@ -23,11 +23,12 @@ public class Blog {
             tagFilter.clear();
             return;
         }
-        for (String s : tags) {
+        tagFilter.addAll(tags);
+        /*for (String s : tags) {
             if (!tagFilter.contains(s)) {
                 tagFilter.add(s);
             }
-        }
+        }*/
     }
 
     /*public void unsetTagFilter(String tagOrNull) {
@@ -60,9 +61,9 @@ public class Blog {
 
     public ArrayList<Post> getPost() {
         //TODO
-        sortPostList(postList);
-        postList = filteringByUser(postList);
         postList = filteringByTag(postList);
+        postList = filteringByUser(postList);
+        sortPostList(postList);
         for (Post post : postList) {
             System.out.println("Post 제목 : " + post.getTitle() + "\n" +
                     "내용 : " + post.getBody() + "\n" +
@@ -73,7 +74,6 @@ public class Blog {
             for (String tag : post.getTagList()) {
                 System.out.println(tag);
             }
-            post.getComment();
         }
         return postList;
     }
