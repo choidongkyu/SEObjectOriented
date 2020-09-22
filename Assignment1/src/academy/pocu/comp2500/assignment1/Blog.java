@@ -3,10 +3,11 @@ package academy.pocu.comp2500.assignment1;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class Blog {
     private ArrayList<Post> postList;
-    private final ArrayList<String> tagFilter;
+    private final List<String> tagFilter;
     private String authorFilter;
     private Order sortingType;
 
@@ -17,22 +18,21 @@ public class Blog {
         this.sortingType = Order.CREATED_ASC;
     }
 
-    public void setTagFilter(ArrayList<String> tagsOrNull) {
-        if (tagsOrNull == null || tagsOrNull.isEmpty()) {
+    public void setTagFilter(List<String> tagOrNull) {
+        if (tagOrNull == null) {
             tagFilter.clear();
             return;
         }
-        for(String s : tagsOrNull) {
+        for (String s : tagOrNull) {
+            if (s == null || s.equals("")) {
+                return;
+            }
             if (!tagFilter.contains(s)) {
                 this.tagFilter.add(s);
             }
         }
-
     }
 
-    public ArrayList<String> getTagFilter() {
-        return this.tagFilter;
-    }
 
     /*public void unsetTagFilter(String tagOrNull) {
         if (tagOrNull == null) {
