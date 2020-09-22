@@ -25,10 +25,10 @@ public class Blog {
         for (String s : tags) {
             if (s != null && !s.equals("")) {
                 if (!tagFilter.contains(s)) {
-                    this.tagFilter.add(s);
+                    tagFilter.add(s);
                 }
             }else {
-                this.tagFilter.clear();
+                tagFilter.clear();
             }
         }
     }
