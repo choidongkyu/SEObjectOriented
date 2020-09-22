@@ -97,7 +97,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByTag(ArrayList<Post> list) {
-        if (tagFilter.size() == 0) {
+        if (tagFilter.size() == 0 || tagFilter.get(0).equals("")) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
