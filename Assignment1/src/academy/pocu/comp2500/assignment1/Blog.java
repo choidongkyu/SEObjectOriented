@@ -19,16 +19,13 @@ public class Blog {
     }
 
     public void setTagFilter(List<String> tags) {
-        if (tags == null) {
+        if (tags == null || tags.isEmpty()) {
+            tagFilter.clear();
             return;
         }
         for (String s : tags) {
-            if (s != null && !s.equals("")) {
-                if (!tagFilter.contains(s)) {
-                    tagFilter.add(s);
-                }
-            }else {
-                tagFilter.clear();
+            if (!tagFilter.contains(s)) {
+                tagFilter.add(s);
             }
         }
     }
