@@ -18,8 +18,8 @@ public class Blog {
     }
 
     public void setTagFilter(String tagOrNull) {
-        if (tagOrNull == null) {
-            //tagFilter.clear();
+        if (tagOrNull == null || tagOrNull.equals("")) {
+            tagFilter.clear();
             return;
         }
         if (!tagFilter.contains(tagOrNull)) {
