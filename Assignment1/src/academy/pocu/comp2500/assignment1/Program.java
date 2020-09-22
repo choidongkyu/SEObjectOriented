@@ -2,6 +2,7 @@ package academy.pocu.comp2500.assignment1;
 
 import academy.pocu.comp2500.assignment1.registry.Registry;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import static java.lang.Thread.sleep;
@@ -27,10 +28,12 @@ public class Program {
         p3.addTag("우정","채혜인");
         p4.addTag("게임","오맹");
         //b1.setTagFilter("게임");
-        b1.setTagFilter("사랑");
-        b1.setTagFilter(null);
-        b1.setTagFilter("용기");
-        b1.setTagFilter("t7");
+        ArrayList tag = new ArrayList();
+        tag.add("사랑");
+        ArrayList tag2 = new ArrayList();
+        tag2.add("요리");
+        b1.setTagFilter(tag);
+        b1.setTagFilter(tag2);
         //b1.setTagFilter("t3");
         //b1.setTagFilter("");
         b1.getPost();

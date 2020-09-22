@@ -17,14 +17,17 @@ public class Blog {
         this.sortingType = Order.CREATED_ASC;
     }
 
-    public void setTagFilter(String tagOrNull) {
-        if (tagOrNull == null || tagOrNull.equals("")) {
-            //tagFilter.clear();
+    public void setTagFilter(ArrayList<String> tagsOrNull) {
+        if (tagsOrNull == null || tagsOrNull.isEmpty()) {
+            tagFilter.clear();
             return;
         }
-        if (!tagFilter.contains(tagOrNull)) {
-            this.tagFilter.add(tagOrNull);
+        for(String s : tagsOrNull) {
+            if (!tagFilter.contains(s)) {
+                this.tagFilter.add(s);
+            }
         }
+
     }
 
     public ArrayList<String> getTagFilter() {
