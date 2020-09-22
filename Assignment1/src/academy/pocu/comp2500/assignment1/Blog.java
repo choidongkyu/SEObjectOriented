@@ -19,7 +19,7 @@ public class Blog {
 
     public void setTagFilter(String tagOrNull) {
         if (tagOrNull == null) {
-            tagFilter.clear();
+            //tagFilter.clear();
             return;
         }
         if (!tagFilter.contains(tagOrNull)) {
