@@ -31,13 +31,6 @@ public class Blog {
         }*/
     }
 
-    /*public void unsetTagFilter(String tagOrNull) {
-        if (tagOrNull == null) {
-            tagFilter.clear();
-            return;
-        }
-        tagFilter.remove(tagOrNull);
-    }*/
 
     public String getUserFilter() {
         return authorFilter;
@@ -47,13 +40,6 @@ public class Blog {
         this.authorFilter = authorOrNull;
     }
 
-    /*public void unsetUserFilter() {
-        this.authorFilter = null;
-    }*/
-
-    public Order getSortingType() {
-        return sortingType;
-    }
 
     public void setSortingType(Order sortingType) {
         this.sortingType = sortingType;
@@ -61,10 +47,11 @@ public class Blog {
 
     public ArrayList<Post> getPost() {
         //TODO
-        postList = filteringByTag(postList);
-        postList = filteringByUser(postList);
-        sortPostList(postList);
-        for (Post post : postList) {
+        ArrayList<Post> result = new ArrayList<>(postList);
+        result = filteringByTag(result);
+        result = filteringByUser(result);
+        sortPostList(result);
+        for (Post post : result) {
             System.out.println("Post 제목 : " + post.getTitle() + "\n" +
                     "내용 : " + post.getBody() + "\n" +
                     "user : " + post.getUser() + "\n" +
@@ -75,7 +62,7 @@ public class Blog {
                 System.out.println(tag);
             }
         }
-        return postList;
+        return result;
     }
 
     public void addPost(Post post) {
