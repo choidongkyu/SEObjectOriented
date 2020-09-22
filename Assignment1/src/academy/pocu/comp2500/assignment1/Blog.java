@@ -31,6 +31,14 @@ public class Blog {
         return this.tagFilter;
     }
 
+    /*public void unsetTagFilter(String tagOrNull) {
+        if (tagOrNull == null) {
+            tagFilter.clear();
+            return;
+        }
+        tagFilter.remove(tagOrNull);
+    }*/
+
     public String getUserFilter() {
         return authorFilter;
     }
@@ -38,6 +46,10 @@ public class Blog {
     public void setUserFilter(String authorOrNull) {
         this.authorFilter = authorOrNull;
     }
+
+    /*public void unsetUserFilter() {
+        this.authorFilter = null;
+    }*/
 
     public Order getSortingType() {
         return sortingType;
@@ -72,7 +84,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByUser(ArrayList<Post> list) {
-        if (authorFilter == null) {
+        if (authorFilter == null || authorFilter.equals("")) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
@@ -85,7 +97,7 @@ public class Blog {
     }
 
     private ArrayList<Post> filteringByTag(ArrayList<Post> list) {
-        if (tagFilter.size() == 0 || tagFilter.get(0).equals("")) {
+        if (tagFilter.size() == 0) {
             return list;
         }
         ArrayList<Post> result = new ArrayList<>();
