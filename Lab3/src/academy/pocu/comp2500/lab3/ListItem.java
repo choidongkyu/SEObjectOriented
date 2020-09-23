@@ -46,11 +46,30 @@ public class ListItem {
     }
 
     public String toString() {
-        String result = bulletStyle + " " + text;
-        for (ListItem item : sublistItems) {
-            result += "\n";
-            result += item.toString();
-        }
+        String result = toString(0);
         return result;
     }
+
+    private String toString(int i) {
+        String result = text + ", i = " + i;
+        //String space = "    ";
+        //space = space.repeat(i);
+        for (ListItem s : sublistItems) {
+            result += "\n";
+            //result = s.getText();
+            result += s.toString(++i);
+        }
+        return result;
+
+    }
+
+    /*
+    String s = item1.getText();
+    s += "\n";
+    s += "    " + item1.getSublistItem(0).getText();
+    s += "\n";
+    s += "        " + item1.getSublistItem(0).getSublistItem(0).getText();
+    s += "\n";
+    s += "        " + item1.getSublistItem(0).getSublistItem(1).getText();
+    */
 }
