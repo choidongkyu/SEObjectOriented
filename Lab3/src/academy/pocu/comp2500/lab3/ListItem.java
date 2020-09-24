@@ -46,20 +46,17 @@ public class ListItem {
     }
 
     public String toString() {
-        String result = toString(0);
-        return result;
+        return toString(-1);
     }
 
     private String toString(int i) {
-        String result = text + ", i = " + i;
-        //String space = "    ";
-        //space = space.repeat(i);
-        for (ListItem s : sublistItems) {
-            result += "\n";
-            //result = s.getText();
-            result += s.toString(++i);
+        String space = "    ";
+        space = space.repeat(++i);
+        StringBuilder result = new StringBuilder(space + bulletStyle + " " + text + System.lineSeparator());
+        for (ListItem sublistItem : sublistItems) {
+            result.append(sublistItem.toString(i));
         }
-        return result;
+        return result.toString();
 
     }
 
