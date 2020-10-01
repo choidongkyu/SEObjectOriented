@@ -20,7 +20,7 @@ public class MemoryCache {
     }
 
     public static MemoryCache getInstance(String data) {
-        if (instance.size() > MAX_COUNT && MAX_COUNT > 0) {
+        if (instance.size() >= MAX_COUNT && MAX_COUNT > 0) {
             int min = Integer.MAX_VALUE;
             String minkey = null;
             for (String key : instance.keySet()) {
