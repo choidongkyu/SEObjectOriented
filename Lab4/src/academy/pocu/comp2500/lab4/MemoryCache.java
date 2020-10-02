@@ -4,42 +4,42 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MemoryCache {
-    private static final HashMap<String, MemoryCache> instance = new HashMap<String, MemoryCache>();
-    private static int CACHE_INSTANCE = 0;
-    private static int MAX_COUNT = 0;
+    private static final HashMap<String, MemoryCache> INSTANCE = new HashMap<String, MemoryCache>();
+    private static int CACHEINSTANCE = 0;
+    private static int MAXCOUNT = 0;
     private final ArrayList<EntryMap> entryMaps;
     private int lruNumber;
     private EvictionPolicy evictionPolicy;
     private int entryMaxCount;
 
-    public MemoryCache() {
-        lruNumber = CACHE_INSTANCE;
+    private MemoryCache() {
+        lruNumber = CACHEINSTANCE;
         entryMaps = new ArrayList<>();
         evictionPolicy = EvictionPolicy.LEAST_RECENTLY_USED;
         entryMaxCount = 0;
     }
 
     public static MemoryCache getInstance(String data) {
-        if (instance.size() >= MAX_COUNT && MAX_COUNT > 0) {
+        if (INSTANCE.size() >= MAXCOUNT && MAXCOUNT > 0) {
             int min = Integer.MAX_VALUE;
             String minkey = null;
-            for (String key : instance.keySet()) {
-                if (instance.get(key).getLruNumber() < min) {
-                    min = instance.get(key).getLruNumber();
+            for (String key : INSTANCE.keySet()) {
+                if (INSTANCE.get(key).getLruNumber() < min) {
+                    min = INSTANCE.get(key).getLruNumber();
                     minkey = key;
                 }
             }
-            instance.remove(minkey);
+            INSTANCE.remove(minkey);
         }
 
-        if (instance.get(data) == null) {
-            ++CACHE_INSTANCE;
-            instance.put(data, new MemoryCache());
-            return instance.get(data);
+        if (INSTANCE.get(data) == null) {
+            ++CACHEINSTANCE;
+            INSTANCE.put(data, new MemoryCache());
+            return INSTANCE.get(data);
         }
 
-        instance.get(data).setLruNumber(++CACHE_INSTANCE);
-        return instance.get(data);
+        INSTANCE.get(data).setLruNumber(++CACHEINSTANCE);
+        return INSTANCE.get(data);
     }
 
     private void setLruNumber(int lruNumber) {
@@ -51,11 +51,11 @@ public class MemoryCache {
     }
 
     public static void setMaxInstanceCount(int count) {
-        MAX_COUNT = count;
+        MAXCOUNT = count;
     }
 
     public static void clear() {
-        instance.clear();
+        INSTANCE.clear();
     }
 
     public void setEvictionPolicy(EvictionPolicy evictionPolicy) {

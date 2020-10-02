@@ -1,33 +1,33 @@
 package academy.pocu.comp2500.lab4;
 
 public class EntryMap {
-    private static int CACHE_ENTRY = 0;
+    private static int CACHEENTRY = 0;
     String key;
     String value;
     int lruNumber;
 
     public EntryMap(String key, String value) {
-        lruNumber = CACHE_ENTRY;
+        lruNumber = CACHEENTRY;
         this.key = key;
         this.value = value;
-        ++CACHE_ENTRY;
+        ++CACHEENTRY;
     }
 
     public String getValue(String key) {
-        ++CACHE_ENTRY;
-        lruNumber = CACHE_ENTRY;
+        ++CACHEENTRY;
+        lruNumber = CACHEENTRY;
         return value;
     }
 
     public void setValue(String value) {
-        ++CACHE_ENTRY;
-        lruNumber = CACHE_ENTRY;
+        ++CACHEENTRY;
+        lruNumber = CACHEENTRY;
         this.value = value;
     }
 
     public String getValue() {
-        ++CACHE_ENTRY;
-        lruNumber = CACHE_ENTRY;
+        ++CACHEENTRY;
+        lruNumber = CACHEENTRY;
         return value;
     }
 
