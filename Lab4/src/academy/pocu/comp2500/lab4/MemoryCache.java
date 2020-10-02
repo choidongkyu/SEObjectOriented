@@ -5,22 +5,27 @@ import java.util.HashMap;
 
 public class MemoryCache {
     private static final HashMap<String, MemoryCache> INSTANCE = new HashMap<String, MemoryCache>();
-    private static int CACHEINSTANCE = 0;
-    private static int MAXCOUNT = 0;
+    private static int cacheNum = 0;
+    private static int maxCount = 0;
     private final ArrayList<EntryMap> entryMaps;
     private int lruNumber;
     private EvictionPolicy evictionPolicy;
     private int entryMaxCount;
 
     private MemoryCache() {
-        lruNumber = CACHEINSTANCE;
+        lruNumber = cacheNum;
         entryMaps = new ArrayList<>();
         evictionPolicy = EvictionPolicy.LEAST_RECENTLY_USED;
         entryMaxCount = 0;
     }
 
     public static MemoryCache getInstance(String data) {
-        if (INSTANCE.size() >= MAXCOUNT && MAXCOUNT > 0) {
+        if (INSTANCE.get(data) != null) {
+            INSTANCE.get(data).setLruNumber(++cacheNum);
+            return INSTANCE.get(data);
+        }
+
+        if (INSTANCE.size() >= maxCount && maxCount > 0) {
             int min = Integer.MAX_VALUE;
             String minkey = null;
             for (String key : INSTANCE.keySet()) {
@@ -32,13 +37,8 @@ public class MemoryCache {
             INSTANCE.remove(minkey);
         }
 
-        if (INSTANCE.get(data) == null) {
-            ++CACHEINSTANCE;
-            INSTANCE.put(data, new MemoryCache());
-            return INSTANCE.get(data);
-        }
-
-        INSTANCE.get(data).setLruNumber(++CACHEINSTANCE);
+        ++cacheNum;
+        INSTANCE.put(data, new MemoryCache());
         return INSTANCE.get(data);
     }
 
@@ -51,7 +51,18 @@ public class MemoryCache {
     }
 
     public static void setMaxInstanceCount(int count) {
-        MAXCOUNT = count;
+        maxCount = count;
+        while (INSTANCE.size() > maxCount) {
+            int min = Integer.MAX_VALUE;
+            String minkey = null;
+            for (String key : INSTANCE.keySet()) {
+                if (INSTANCE.get(key).getLruNumber() < min) {
+                    min = INSTANCE.get(key).getLruNumber();
+                    minkey = key;
+                }
+            }
+            INSTANCE.remove(minkey);
+        }
     }
 
     public static void clear() {
