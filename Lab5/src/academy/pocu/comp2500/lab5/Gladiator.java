@@ -3,7 +3,7 @@ package academy.pocu.comp2500.lab5;
 import java.util.ArrayList;
 
 public class Gladiator extends Barbarian {
-    private ArrayList<Move> moves;
+    private final ArrayList<Move> moves;
 
     public Gladiator(String name, int hp, int attack, int defense) {
         super(name, hp, attack, defense);
@@ -21,7 +21,7 @@ public class Gladiator extends Barbarian {
 
     public boolean removeMove(String skill) {
         for (Move a : moves) {
-            if (a.skillName.equals(skill)) {
+            if (a.getSkillName().equals(skill)) {
                 return moves.remove(a);
             }
         }
@@ -33,11 +33,11 @@ public class Gladiator extends Barbarian {
             return;
         }
         for (Move a : moves) {
-            if (a.skillName.equals(skill)) {
-                if (a.value == 0) {
+            if (a.getSkillName().equals(skill)) {
+                if (a.getValue() == 0) {
                     return;
                 }
-                double damage = ((double) super.attack / enemy.defense) * a.power / 2;
+                double damage = ((double) super.attack / enemy.defense) * a.getPower() / 2;
                 if (damage < 1) {
                     damage = 1;
                 }
@@ -45,7 +45,7 @@ public class Gladiator extends Barbarian {
                 if (enemy.hp <= 0) {
                     enemy.isAlive = false;
                 }
-                --a.value;
+                a.setValue(a.getValue() - 1);
                 return;
             }
         }
@@ -55,13 +55,13 @@ public class Gladiator extends Barbarian {
         if (!isAlive()) {
             return;
         }
-        if(super.hp < super.maxHp){
+        if (super.hp < super.maxHp) {
             super.hp += 10;
             super.hp = Math.min(maxHp, Math.max(0, hp));
         }
         for (Move a : moves) {
-            if (a.value < a.maxValue) {
-                ++a.value;
+            if (a.getValue() < a.getMaxValue()) {
+                a.setValue(a.getValue() + 1);
             }
         }
     }

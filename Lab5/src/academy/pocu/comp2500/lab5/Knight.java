@@ -10,7 +10,7 @@ public class Knight extends Gladiator {
     }
 
     public void setPet(Pet pet) {
-        if(pet == null) {
+        if (pet == null) {
             isTogether = false;
             return;
         }

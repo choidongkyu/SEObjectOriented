@@ -31,6 +31,7 @@ public class Barbarian {
         double damage = ((double) this.attack - enemy.defense) / 2;
         enemy.hp = enemy.hp - (int) damage;
         if (enemy.hp <= 0) {
+            enemy.hp = 0;
             enemy.isAlive = false;
         }
     }
