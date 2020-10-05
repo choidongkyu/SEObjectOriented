@@ -12,11 +12,13 @@ public class Program {
         Move move2 = new Move("Hadoke3", 120, 20);
         Move move3 = new Move("Hadoken", 120, 20);
         Move move4 = new Move("Hadoken5", 120, 20);
+        Move move5 = new Move("Hadoke", 120, 20);
         System.out.println(gladiator0.addMove(move)); // true
         System.out.println(gladiator0.addMove(move1)); // true
         System.out.println(gladiator0.addMove(move2)); // true
         System.out.println(gladiator0.addMove(move3)); // true
         System.out.println(gladiator0.addMove(move4)); // true
+        System.out.println(gladiator0.addMove(move5)); // true
 
         gladiator0.attack("Hadoken5", gladiator1);
 

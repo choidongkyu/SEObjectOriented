@@ -11,6 +11,9 @@ public class Gladiator extends Barbarian {
     }
 
     public boolean addMove(Move move) {
+        if(moves.size() > 3) {
+            return false;
+        }
         for (Move a : moves) {
             if (a.isSameMove(move)) {
                 return false;
