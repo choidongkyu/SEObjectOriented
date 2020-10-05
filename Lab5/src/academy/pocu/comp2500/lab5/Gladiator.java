@@ -29,7 +29,7 @@ public class Gladiator extends Barbarian {
     }
 
     public void attack(String skill, Barbarian enemy) {
-        if (!isAlive()) {
+        if (!isAlive() || this == enemy) {
             return;
         }
         for (Move a : moves) {

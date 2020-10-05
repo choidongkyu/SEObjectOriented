@@ -24,11 +24,14 @@ public class Barbarian {
     }
 
     public void attack(Barbarian enemy) {
-        if (!isAlive) {
+        if (!isAlive || this == enemy) {
             return;
         }
 
         double damage = ((double) this.attack - enemy.defense) / 2;
+        if (damage < 1) {
+            damage = 1;
+        }
         enemy.hp = enemy.hp - (int) damage;
         if (enemy.hp <= 0) {
             enemy.hp = 0;
