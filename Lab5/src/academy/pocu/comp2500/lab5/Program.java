@@ -5,10 +5,21 @@ import academy.pocu.comp2500.lab5.*;
 public class Program {
 
     public static void main(String[] args) {
-        Barbarian barbarian0 = new Barbarian("Dragonborn Whiterun", 250, 88, 10);
+        Gladiator gladiator0 = new Gladiator("Dragonborn Whiterun", 100, 250, 10);
+        Gladiator gladiator1 = new Gladiator("Ulfric Stormcloak", 1000, 300, 77);
+        Move move = new Move("Hadoken1", 120, 20);
+        Move move1 = new Move("Hadoken2", 120, 20);
+        Move move2 = new Move("Hadoke3", 120, 20);
+        Move move3 = new Move("Hadoken", 120, 20);
+        Move move4 = new Move("Hadoken5", 120, 20);
+        System.out.println(gladiator0.addMove(move)); // true
+        System.out.println(gladiator0.addMove(move1)); // true
+        System.out.println(gladiator0.addMove(move2)); // true
+        System.out.println(gladiator0.addMove(move3)); // true
+        System.out.println(gladiator0.addMove(move4)); // true
 
-        barbarian0.attack(barbarian0);
+        gladiator0.attack("Hadoken5", gladiator1);
 
-        System.out.println(barbarian0.getHp()); //
+        System.out.println(gladiator1.getHp()); // 806
     }
 }
