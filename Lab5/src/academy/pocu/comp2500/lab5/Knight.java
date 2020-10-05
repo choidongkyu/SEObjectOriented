@@ -1,7 +1,8 @@
 package academy.pocu.comp2500.lab5;
 
 public class Knight extends Gladiator {
-    Pet pet;
+    private Pet pet;
+    private boolean isTogether = false;
 
     public Knight(String name, int hp, int attack, int defense) {
         super(name, hp, attack, defense);
@@ -9,11 +10,16 @@ public class Knight extends Gladiator {
     }
 
     public void setPet(Pet pet) {
+        if(pet == null) {
+            isTogether = false;
+            return;
+        }
+        isTogether = true;
         this.pet = pet;
     }
 
     public void attackTogether(Barbarian enemy) {
-        if (!isAlive()) {
+        if (!isAlive() || !isTogether) {
             return;
         }
         double damage = ((double) this.attack + pet.attack - enemy.defense) / 2;

@@ -74,7 +74,6 @@ public class MemoryCache {
     }
 
     public void addEntry(String key, String value) {
-
         for (int i = 0; i < entryMaps.size(); ++i) {
             if (entryMaps.get(i).getKey().equals(key)) {
                 entryMaps.get(i).setValue(value);

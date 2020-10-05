@@ -1,5 +1,7 @@
 package academy.pocu.comp2500.lab5;
 
+import academy.pocu.comp2500.lab5.*;
+
 public class Program {
 
     public static void main(String[] args) {
