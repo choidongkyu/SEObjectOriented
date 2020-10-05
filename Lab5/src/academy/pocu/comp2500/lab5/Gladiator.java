@@ -29,6 +29,9 @@ public class Gladiator extends Barbarian {
     }
 
     public void attack(String skill, Barbarian enemy) {
+        if (!isAlive()) {
+            return;
+        }
         for (Move a : moves) {
             if (a.skillName.equals(skill)) {
                 if (a.value == 0) {
@@ -39,17 +42,23 @@ public class Gladiator extends Barbarian {
                     damage = 1;
                 }
                 enemy.hp = (enemy.hp - (int) damage);
+                if (enemy.hp <= 0) {
+                    enemy.isAlive = false;
+                }
                 --a.value;
                 return;
             }
         }
     }
 
-    public void reset() {
-        if(super.hp < super.maxHp){
-            //super.hp = Math.max(super.maxHp, Math.min())
+    public void rest() {
+        if (!isAlive()) {
+            return;
         }
-        super.hp += 10;
+        if(super.hp < super.maxHp){
+            super.hp += 10;
+            super.hp = Math.min(maxHp, Math.max(0, hp));
+        }
         for (Move a : moves) {
             if (a.value < a.maxValue) {
                 ++a.value;

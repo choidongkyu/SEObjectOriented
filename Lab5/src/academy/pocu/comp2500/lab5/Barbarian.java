@@ -8,12 +8,12 @@ public class Barbarian {
     protected int defense;
     protected int maxHp;
     protected int hp;
-    private boolean isAlive;
+    protected boolean isAlive;
 
     public Barbarian(String name, int hp, int attack, int defense) {
         this.name = name;
         this.maxHp = hp;
-        this.hp = maxHp;
+        this.hp = this.maxHp;
         this.attack = attack;
         this.defense = defense;
         isAlive = true;
