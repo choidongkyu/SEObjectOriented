@@ -43,6 +43,7 @@ public class Gladiator extends Barbarian {
                 }
                 enemy.hp = (enemy.hp - (int) damage);
                 if (enemy.hp <= 0) {
+                    enemy.hp = 0;
                     enemy.isAlive = false;
                 }
                 a.setValue(a.getValue() - 1);
