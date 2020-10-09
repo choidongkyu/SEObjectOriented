@@ -1,11 +1,11 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Stamp extends Product {
-    private String print;
+    private String text;
 
-    public Stamp(StampSize stampSize, StampColor stampColor, String print) {
+    public Stamp(StampSize stampSize, StampColor stampColor) {
         super(getSize(stampSize), getPrice(stampSize), getColor(stampColor));
-        this.print = print;
+        this.text = "";
     }
 
 
@@ -59,11 +59,11 @@ public class Stamp extends Product {
     }
 
 
-    public String getPrint() {
-        return print;
+    public String getText() {
+        return text;
     }
 
-    public void setPrint(String print) {
-        this.print = print;
+    public void setText(String text) {
+        this.text = text;
     }
 }
