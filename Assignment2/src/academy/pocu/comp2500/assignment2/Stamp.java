@@ -3,9 +3,9 @@ package academy.pocu.comp2500.assignment2;
 public class Stamp extends Product {
     private String print;
 
-    public Stamp(StampSize stampSize, StampColor stampColor) {
+    public Stamp(StampSize stampSize, StampColor stampColor, String print) {
         super(getSize(stampSize), getPrice(stampSize), getColor(stampColor));
-        this.print = "";
+        this.print = print;
     }
 
 
