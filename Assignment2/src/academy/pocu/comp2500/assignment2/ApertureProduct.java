@@ -15,11 +15,11 @@ public class ApertureProduct extends Product {
     }
 
     public void addImage(ImageAperture imageAperture) {
-        if(imageAperture.x < 0 || imageAperture.x > super.getSize().getWidth()) {
+        if (imageAperture.x < 0 || imageAperture.x > super.getSize().getWidth()) {
             return;
         }
 
-        if(imageAperture.y < 0 || imageAperture.y > super.getSize().getHeigth()) {
+        if (imageAperture.y < 0 || imageAperture.y > super.getSize().getHeigth()) {
             return;
         }
         super.price += 5;

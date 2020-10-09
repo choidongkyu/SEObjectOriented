@@ -46,13 +46,13 @@ public class Stamp extends Product {
         Size size = null;
         switch (stampSize) {
             case SMALL:
-                size = new Size(40,30);
+                size = new Size(40, 30);
                 break;
             case MEDIUM:
-                size = new Size(50,20);
+                size = new Size(50, 20);
                 break;
             case LARGE:
-                size = new Size(70,40);
+                size = new Size(70, 40);
                 break;
         }
         return size;

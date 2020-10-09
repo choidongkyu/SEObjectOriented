@@ -12,16 +12,16 @@ public class Banner extends ApertureProduct {
         Size size = null;
         switch (bannerSize) {
             case SMALL:
-                size = new Size(1000,500);
+                size = new Size(1000, 500);
                 break;
             case MEDIUM:
-                size = new Size(1000,1000);
+                size = new Size(1000, 1000);
                 break;
             case LARGE:
-                size = new Size(2000,500);
+                size = new Size(2000, 500);
                 break;
             case EXTRALARGE:
-                size = new Size(3000,1000);
+                size = new Size(3000, 1000);
                 break;
         }
         return size;

@@ -15,7 +15,7 @@ public class Cart {
 
     public void removeProduct(Product product) {
         for (int i = 0; i < products.size(); ++i) {
-            if(products.get(i).isEquals(product)) {
+            if (products.get(i).isEquals(product)) {
                 products.remove(i);
                 return;
             }
@@ -25,10 +25,10 @@ public class Cart {
     public int getTotalPrice() {
         int price = 0;
 
-        if(products.size() == 0) {
+        if (products.size() == 0) {
             return price;
         }
-        for(Product product : products) {
+        for (Product product : products) {
             price += product.price;
         }
         return price;
