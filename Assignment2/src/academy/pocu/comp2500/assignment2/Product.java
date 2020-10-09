@@ -1,0 +1,47 @@
+package academy.pocu.comp2500.assignment2;
+
+public class Product {
+    private Size size;
+    protected int price;
+    private Color color;
+    private DeliveryMethod deliveryMethod;
+
+    public Product(Size size, int price, Color color) {
+        this.size = size;
+        this.price = price;
+        this.color = color;
+        deliveryMethod = DeliveryMethod.PICKUP;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public DeliveryMethod getDeliveryMethod() {
+        return deliveryMethod;
+    }
+
+    public void setDeliveryMethod(DeliveryMethod deliveryMethod) {
+        this.deliveryMethod = deliveryMethod;
+    }
+
+    public boolean isEquals(Product product) {
+        return this.size.isEquals(product.size) && this.color.isEquals(product.color) && this.price == product.price;
+    }
+}
