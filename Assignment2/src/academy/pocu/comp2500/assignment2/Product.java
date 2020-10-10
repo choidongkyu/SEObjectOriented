@@ -6,11 +6,11 @@ public class Product {
     private Color color;
     private DeliveryMethod deliveryMethod;
 
-    public Product(Size size, int price, Color color) {
+    public Product(Size size, int price, Color color, DeliveryMethod deliveryMethod) {
         this.size = size;
         this.price = price;
         this.color = color;
-        deliveryMethod = DeliveryMethod.PICKUP;
+        this.deliveryMethod = deliveryMethod;
     }
 
     public int getPrice() {
@@ -22,7 +22,7 @@ public class Product {
     }
 
     public Color getColor() {
-        System.out.printf("r = %02X , g = %02X b = %02X\n", color.getR(),color.getG(),color.getB());
+        //System.out.printf("r = %02X , g = %02X b = %02X\n", color.getR(),color.getG(),color.getB());
         return color;
     }
 

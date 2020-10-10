@@ -7,22 +7,22 @@ public class ApertureProduct extends Product {
     private ArrayList<ImageAperture> imageApertures;
     private ArrayList<TextAperture> textApertures;
 
-    public ApertureProduct(Size size, int price, Color color, Orientation orientation) {
-        super(size, price, color);
+    public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod) {
+        super(size, price, color, deliveryMethod);
         this.orientation = orientation;
         imageApertures = new ArrayList<>();
         textApertures = new ArrayList<>();
     }
 
     public void addImage(ImageAperture imageAperture) {
-        if(imageAperture.getX() + imageAperture.getSize().getWidth() <= 0 ||
+        if (imageAperture.getX() + imageAperture.getSize().getWidth() <= 0 ||
                 imageAperture.getX() >= super.size.getWidth()) {
-            return ;
+            return;
         }
 
-        if(imageAperture.getY() + imageAperture.getSize().getHeigth() <= 0 ||
+        if (imageAperture.getY() + imageAperture.getSize().getHeigth() <= 0 ||
                 imageAperture.getY() >= super.size.getHeigth()) {
-            return ;
+            return;
         }
 
         super.price += 5;
@@ -30,14 +30,14 @@ public class ApertureProduct extends Product {
     }
 
     public void addText(TextAperture textAperture) {
-        if(textAperture.getX() + textAperture.getSize().getWidth() <= 0 ||
+        if (textAperture.getX() + textAperture.getSize().getWidth() <= 0 ||
                 textAperture.getX() >= super.size.getWidth()) {
-            return ;
+            return;
         }
 
-        if(textAperture.getY() + textAperture.getSize().getHeigth() <= 0 ||
+        if (textAperture.getY() + textAperture.getSize().getHeigth() <= 0 ||
                 textAperture.getY() >= super.size.getHeigth()) {
-            return ;
+            return;
         }
 
         super.price += 5;

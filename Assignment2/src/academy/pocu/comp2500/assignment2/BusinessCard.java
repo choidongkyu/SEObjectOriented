@@ -4,8 +4,9 @@ public class BusinessCard extends ApertureProduct {
     private BusinessCardSides businessCardSides;
 
     public BusinessCard(BusinessCardType businessCardType, BusinessCardColor businessCardColor,
-                        BusinessCardSides businessCardSides, Orientation orientation) {
-        super(new Size(90, 50), getPrice(businessCardType, businessCardSides), getColor(businessCardColor), orientation);
+                        BusinessCardSides businessCardSides, Orientation orientation, DeliveryMethod deliveryMethod) {
+        super(new Size(90, 50), getPrice(businessCardType, businessCardSides),
+                getColor(businessCardColor), orientation, deliveryMethod);
         this.businessCardSides = businessCardSides;
     }
 

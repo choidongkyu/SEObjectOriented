@@ -6,7 +6,7 @@ public class Program {
 
     public static void main(String[] args) {
         BusinessCard businessCard = new BusinessCard(BusinessCardType.LAID, BusinessCardColor.GREY,
-                BusinessCardSides.SINGLE, Orientation.LANDSCAPE);
+                BusinessCardSides.SINGLE, Orientation.LANDSCAPE, DeliveryMethod.PICKUP);
 
         System.out.println(businessCard.getBusinessCardSides());
         businessCard.getColor();
