@@ -4,7 +4,7 @@ public class Calendar extends Product {
     private CalendarType type;
 
     public Calendar(CalendarType calendarType, DeliveryMethod deliveryMethod) {
-        super(getSize(calendarType), getPrice(calendarType), new Color(0xFF, 0xFF, 0xFF), deliveryMethod);
+        super(getSize(calendarType), getPrice(calendarType), new Color(0xFF, 0xFF, 0xFF), deliveryMethod, getName(calendarType));
         this.type = calendarType;
     }
 
@@ -42,5 +42,21 @@ public class Calendar extends Product {
                 break;
         }
         return price;
+    }
+
+    static private String getName(CalendarType calendarType) {
+        String name = "";
+        switch (calendarType) {
+            case WALL:
+                name = "Wall Calendar";
+                break;
+            case DESK:
+                name = "Desk Calendar";
+                break;
+            case MAGNET:
+                name = "Magnet Calendar";
+                break;
+        }
+        return name;
     }
 }

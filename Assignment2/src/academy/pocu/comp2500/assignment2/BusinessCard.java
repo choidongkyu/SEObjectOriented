@@ -2,12 +2,14 @@ package academy.pocu.comp2500.assignment2;
 
 public class BusinessCard extends ApertureProduct {
     private BusinessCardSides businessCardSides;
+    private BusinessCardType type;
 
     public BusinessCard(BusinessCardType businessCardType, BusinessCardColor businessCardColor,
                         BusinessCardSides businessCardSides, Orientation orientation, DeliveryMethod deliveryMethod) {
         super(new Size(90, 50), getPrice(businessCardType, businessCardSides),
-                getColor(businessCardColor), orientation, deliveryMethod);
+                getColor(businessCardColor), orientation, deliveryMethod, getName(businessCardType));
         this.businessCardSides = businessCardSides;
+        this.type = businessCardType;
     }
 
     private static int getPrice(BusinessCardType businessCardType, BusinessCardSides businessCardSides) {
@@ -59,9 +61,27 @@ public class BusinessCard extends ApertureProduct {
         return color;
     }
 
-
+    static private String getName(BusinessCardType businessCardType) {
+        String name = "";
+        switch (businessCardType) {
+            case LINEN:
+                name = "Linen Business Card";
+                break;
+            case LAID:
+                name = "Laid Business Card";
+                break;
+            case SMOOTH:
+                name = "Smooth Business Card";
+                break;
+        }
+        return name;
+    }
 
     public BusinessCardSides getBusinessCardSides() {
         return businessCardSides;
+    }
+
+    public BusinessCardType getType() {
+        return type;
     }
 }
