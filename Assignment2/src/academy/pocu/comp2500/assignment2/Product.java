@@ -5,14 +5,12 @@ public class Product {
     protected int price;
     private Color color;
     private DeliveryMethod deliveryMethod;
-    private String signature;
 
-    public Product(Size size, int price, Color color, DeliveryMethod deliveryMethod, String signature) {
+    public Product(Size size, int price, Color color, DeliveryMethod deliveryMethod) {
         this.size = size;
         this.price = price;
         this.color = color;
         this.deliveryMethod = deliveryMethod;
-        this.signature = signature;
     }
 
     public int getPrice() {
@@ -46,9 +44,5 @@ public class Product {
 
     public boolean isEquals(Product product) {
         return this.size.isEquals(product.size) && this.color.isEquals(product.color) && this.price == product.price;
-    }
-
-    public String getSignature() {
-        return signature;
     }
 }

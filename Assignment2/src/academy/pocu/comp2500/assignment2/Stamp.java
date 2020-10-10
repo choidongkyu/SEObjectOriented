@@ -4,7 +4,7 @@ public class Stamp extends Product {
     private TextAperture textAperture;
 
     public Stamp(StampSize stampSize, StampColor stampColor, TextAperture textAperture, DeliveryMethod deliveryMethod) {
-        super(getSize(stampSize), getPrice(stampSize), getColor(stampColor), deliveryMethod, "Stamp");
+        super(getSize(stampSize), getPrice(stampSize), getColor(stampColor), deliveryMethod);
         this.textAperture = textAperture;
     }
 

@@ -7,7 +7,7 @@ public class BusinessCard extends ApertureProduct {
     public BusinessCard(BusinessCardType businessCardType, BusinessCardColor businessCardColor,
                         BusinessCardSides businessCardSides, Orientation orientation, DeliveryMethod deliveryMethod) {
         super(new Size(90, 50), getPrice(businessCardType, businessCardSides),
-                getColor(businessCardColor), orientation, deliveryMethod, getDisplayName(businessCardType));
+                getColor(businessCardColor), orientation, deliveryMethod);
         this.businessCardSides = businessCardSides;
         this.type = businessCardType;
     }
@@ -61,7 +61,7 @@ public class BusinessCard extends ApertureProduct {
         return color;
     }
 
-    static private String getDisplayName(BusinessCardType businessCardType) {
+    /*static private String getDisplayName(BusinessCardType businessCardType) {
         String name = "";
         switch (businessCardType) {
             case LINEN:
@@ -75,7 +75,7 @@ public class BusinessCard extends ApertureProduct {
                 break;
         }
         return name;
-    }
+    }*/
 
     public BusinessCardSides getBusinessCardSides() {
         return businessCardSides;

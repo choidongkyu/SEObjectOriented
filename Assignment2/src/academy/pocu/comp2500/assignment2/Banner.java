@@ -4,7 +4,7 @@ public class Banner extends ApertureProduct {
     private BannerType type;
 
     public Banner(BannerType type, BannerSize bannerSize, Color color, Orientation orientation, DeliveryMethod deliveryMethod) {
-        super(getSize(bannerSize), getPrice(bannerSize), color, orientation, deliveryMethod, getDisplayName(type));
+        super(getSize(bannerSize), getPrice(bannerSize), color, orientation, deliveryMethod);
         this.type = type;
     }
 
@@ -46,7 +46,7 @@ public class Banner extends ApertureProduct {
         return price;
     }
 
-    static private String getDisplayName(BannerType bannerType) {
+    /*static private String getDisplayName(BannerType bannerType) {
         String name = "";
         switch (bannerType) {
             case GLOSS:
@@ -60,7 +60,7 @@ public class Banner extends ApertureProduct {
                 break;
         }
         return name;
-    }
+    }*/
 
     public BannerType getType() {
         return type;
