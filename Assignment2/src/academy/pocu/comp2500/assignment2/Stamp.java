@@ -1,11 +1,11 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Stamp extends Product {
-    private String text;
+    private TextAperture textAperture;
 
-    public Stamp(StampSize stampSize, StampColor stampColor) {
+    public Stamp(StampSize stampSize, StampColor stampColor, TextAperture textAperture) {
         super(getSize(stampSize), getPrice(stampSize), getColor(stampColor));
-        this.text = "";
+        this.textAperture = textAperture;
     }
 
 
@@ -58,12 +58,11 @@ public class Stamp extends Product {
         return size;
     }
 
-
-    public String getText() {
-        return text;
+    public TextAperture getTextAperture() {
+        return textAperture;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setTextAperture(TextAperture textAperture) {
+        this.textAperture = textAperture;
     }
 }
