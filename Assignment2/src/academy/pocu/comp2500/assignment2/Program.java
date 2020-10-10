@@ -5,19 +5,58 @@ import academy.pocu.comp2500.assignment2.registry.Registry;
 public class Program {
 
     public static void main(String[] args) {
-	    // write your code here
-        /*BusinessCard businessCard = new BusinessCard(BusinessCardType.LAID, BusinessCardColor.GREY, BusinessCardSides.DOUBLE, Orientation.LANDSCAPE);
-        Stamp stamp = new Stamp(StampSize.LARGE, StampColor.RED);
+        BusinessCard businessCard = new BusinessCard(BusinessCardType.LAID, BusinessCardColor.GREY,
+                BusinessCardSides.SINGLE, Orientation.LANDSCAPE);
+
+        System.out.println(businessCard.getBusinessCardSides());
+        businessCard.getColor();
+        System.out.println(businessCard.getSize().getWidth());
+        System.out.println(businessCard.getSize().getHeigth());
+        System.out.println(businessCard.price);
+
         Cart cart = new Cart();
-        cart.addProduct(stamp);
         cart.addProduct(businessCard);
         System.out.println(cart.getTotalPrice());
-        cart.removeProduct(stamp);
-        System.out.println(cart.getTotalPrice());
-        businessCard.addImage(new ImageAperture(91,0,"test"));
-        System.out.println(businessCard.price);*/
-        Registry registry = new Registry();
-        App app = new App(registry);
-        registry.validate();
+        businessCard.setDeliveryMethod(DeliveryMethod.SHIP);
+
+        businessCard.addText(new TextAperture(-1, 0, "text", new Size(1, 1)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(90, 0, "text", new Size(1, 1)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(0, 50, "text", new Size(1, 1)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(-10, 0, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(0, -10, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(90, 0, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(0, 50, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(0, 0, "text", new Size(1, 1)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(89, 49, "text", new Size(1, 1)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(-9, -9, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(89, 49, "text", new Size(10, 10)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addText(new TextAperture(0, 0, "text", new Size(90, 50)));
+        System.out.println(businessCard.getPrice());
+
+        businessCard.addImage(new ImageAperture(0, 0, "ImagePath", new Size(90, 50)));
+        System.out.println(businessCard.getPrice());
+
     }
 }

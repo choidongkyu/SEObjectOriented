@@ -1,7 +1,7 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Banner extends ApertureProduct {
-    BannerType type;
+    private BannerType type;
 
     public Banner(BannerType type, BannerSize bannerSize, Color color, Orientation orientation) {
         super(getSize(bannerSize), getPrice(bannerSize), color, orientation);

@@ -1,7 +1,7 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Product {
-    private Size size;
+    protected Size size;
     protected int price;
     private Color color;
     private DeliveryMethod deliveryMethod;
@@ -22,6 +22,7 @@ public class Product {
     }
 
     public Color getColor() {
+        System.out.printf("r = %02X , g = %02X b = %02X\n", color.getR(),color.getG(),color.getB());
         return color;
     }
 

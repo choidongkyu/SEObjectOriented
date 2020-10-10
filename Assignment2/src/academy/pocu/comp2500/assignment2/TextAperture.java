@@ -1,14 +1,16 @@
 package academy.pocu.comp2500.assignment2;
 
 public class TextAperture {
-    int x;
-    int y;
-    String text;
+    private int x;
+    private int y;
+    private Size size;
+    private String text;
 
-    public TextAperture(int x, int y, String text) {
+    public TextAperture(int x, int y, String text, Size size) {
         this.x = x;
         this.y = y;
         this.text = text;
+        this.size = size;
     }
 
     public int getX() {
@@ -33,5 +35,13 @@ public class TextAperture {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
     }
 }

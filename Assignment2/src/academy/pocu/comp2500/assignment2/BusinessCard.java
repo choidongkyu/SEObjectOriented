@@ -1,7 +1,7 @@
 package academy.pocu.comp2500.assignment2;
 
 public class BusinessCard extends ApertureProduct {
-    BusinessCardSides businessCardSides;
+    private BusinessCardSides businessCardSides;
 
     public BusinessCard(BusinessCardType businessCardType, BusinessCardColor businessCardColor,
                         BusinessCardSides businessCardSides, Orientation orientation) {
@@ -57,6 +57,8 @@ public class BusinessCard extends ApertureProduct {
         }
         return color;
     }
+
+
 
     public BusinessCardSides getBusinessCardSides() {
         return businessCardSides;
