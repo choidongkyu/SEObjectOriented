@@ -7,8 +7,8 @@ public class ApertureProduct extends Product {
     private ArrayList<ImageAperture> imageApertures;
     private ArrayList<TextAperture> textApertures;
 
-    public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod, String displayName) {
-        super(size, price, color, deliveryMethod, displayName);
+    public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod, String product) {
+        super(size, price, color, deliveryMethod, product);
         this.orientation = orientation;
         imageApertures = new ArrayList<>();
         textApertures = new ArrayList<>();
