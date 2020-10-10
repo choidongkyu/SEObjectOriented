@@ -61,8 +61,4 @@ public class Stamp extends Product {
     public TextAperture getTextAperture() {
         return textAperture;
     }
-
-    public void setTextAperture(TextAperture textAperture) {
-        this.textAperture = textAperture;
-    }
 }
