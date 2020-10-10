@@ -7,8 +7,8 @@ public class ApertureProduct extends Product {
     private ArrayList<ImageAperture> imageApertures;
     private ArrayList<TextAperture> textApertures;
 
-    public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod, String name) {
-        super(size, price, color, deliveryMethod, name);
+    public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod, String displayName) {
+        super(size, price, color, deliveryMethod, displayName);
         this.orientation = orientation;
         imageApertures = new ArrayList<>();
         textApertures = new ArrayList<>();
@@ -42,5 +42,17 @@ public class ApertureProduct extends Product {
 
         super.price += 5;
         textApertures.add(textAperture);
+    }
+
+    public Orientation getOrientation() {
+        return orientation;
+    }
+
+    public ArrayList<ImageAperture> getImageApertures() {
+        return imageApertures;
+    }
+
+    public ArrayList<TextAperture> getTextApertures() {
+        return textApertures;
     }
 }

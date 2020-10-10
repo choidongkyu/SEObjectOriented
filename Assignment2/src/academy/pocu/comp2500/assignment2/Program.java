@@ -58,5 +58,7 @@ public class Program {
         businessCard.addImage(new ImageAperture(0, 0, "ImagePath", new Size(90, 50)));
         System.out.println(businessCard.getPrice());
 
+        System.out.println(businessCard.getDisplayName());
+
     }
 }
