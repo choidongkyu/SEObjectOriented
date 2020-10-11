@@ -17,17 +17,9 @@ public class Product {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public Color getColor() {
         //System.out.printf("r = %02X , g = %02X b = %02X\n", color.getR(),color.getG(),color.getB());
         return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
     }
 
     public Size getSize() {

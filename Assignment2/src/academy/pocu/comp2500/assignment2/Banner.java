@@ -82,4 +82,6 @@ public class Banner extends ApertureProduct {
     public BannerType getType() {
         return type;
     }
+
+
 }
