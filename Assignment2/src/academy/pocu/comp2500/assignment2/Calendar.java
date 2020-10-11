@@ -2,10 +2,12 @@ package academy.pocu.comp2500.assignment2;
 
 public class Calendar extends Product {
     private CalendarType type;
+    private String name;
 
     public Calendar(CalendarType calendarType, DeliveryMethod deliveryMethod) {
         super(getSize(calendarType), getPrice(calendarType), new Color(0xFF, 0xFF, 0xFF), deliveryMethod);
         this.type = calendarType;
+        this.name = getDisplayName(calendarType);
     }
 
     public CalendarType getType() {
@@ -44,7 +46,7 @@ public class Calendar extends Product {
         return price;
     }
 
-    /*static private String getDisplayName(CalendarType calendarType) {
+    static private String getDisplayName(CalendarType calendarType) {
         String name = "";
         switch (calendarType) {
             case WALL:
@@ -58,5 +60,9 @@ public class Calendar extends Product {
                 break;
         }
         return name;
-    }*/
+    }
+
+    public String getName() {
+        return name;
+    }
 }

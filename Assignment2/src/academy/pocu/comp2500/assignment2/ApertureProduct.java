@@ -4,55 +4,55 @@ import java.util.ArrayList;
 
 public class ApertureProduct extends Product {
     private Orientation orientation;
-    private ArrayList<ImageAperture> images;
-    private ArrayList<TextAperture> texts;
+    private ArrayList<ImageAperture> imageApertures;
+    private ArrayList<TextAperture> textApertures;
 
     public ApertureProduct(Size size, int price, Color color, Orientation orientation, DeliveryMethod deliveryMethod) {
         super(size, price, color, deliveryMethod);
         this.orientation = orientation;
-        images = new ArrayList<>();
-        texts = new ArrayList<>();
+        imageApertures = new ArrayList<>();
+        textApertures = new ArrayList<>();
     }
 
-    public void addImage(ImageAperture image) {
-        if (image.getX() + image.getSize().getWidth() <= 0 ||
-                image.getX() >= super.size.getWidth()) {
+    public void addImage(ImageAperture imageAperture) {
+        if (imageAperture.getX() + imageAperture.getSize().getWidth() <= 0 ||
+                imageAperture.getX() >= super.size.getWidth()) {
             return;
         }
 
-        if (image.getY() + image.getSize().getHeigth() <= 0 ||
-                image.getY() >= super.size.getHeigth()) {
+        if (imageAperture.getY() + imageAperture.getSize().getHeigth() <= 0 ||
+                imageAperture.getY() >= super.size.getHeigth()) {
             return;
         }
 
         super.price += 5;
-        images.add(image);
+        imageApertures.add(imageAperture);
     }
 
-    public void addText(TextAperture text) {
-        if (text.getX() + text.getSize().getWidth() <= 0 ||
-                text.getX() >= super.size.getWidth()) {
+    public void addText(TextAperture textAperture) {
+        if (textAperture.getX() + textAperture.getSize().getWidth() <= 0 ||
+                textAperture.getX() >= super.size.getWidth()) {
             return;
         }
 
-        if (text.getY() + text.getSize().getHeigth() <= 0 ||
-                text.getY() >= super.size.getHeigth()) {
+        if (textAperture.getY() + textAperture.getSize().getHeigth() <= 0 ||
+                textAperture.getY() >= super.size.getHeigth()) {
             return;
         }
 
         super.price += 5;
-        texts.add(text);
+        textApertures.add(textAperture);
     }
 
     public Orientation getOrientation() {
         return orientation;
     }
 
-    public ArrayList<ImageAperture> getImages() {
-        return images;
+    public ArrayList<ImageAperture> getImageApertures() {
+        return imageApertures;
     }
 
-    public ArrayList<TextAperture> getTexts() {
-        return texts;
+    public ArrayList<TextAperture> getTextApertures() {
+        return textApertures;
     }
 }

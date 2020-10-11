@@ -2,10 +2,12 @@ package academy.pocu.comp2500.assignment2;
 
 public class Banner extends ApertureProduct {
     private BannerType type;
+    private String name;
 
     public Banner(BannerType type, BannerSize bannerSize, Color color, Orientation orientation, DeliveryMethod deliveryMethod) {
         super(getSize(bannerSize), getPrice(bannerSize), color, orientation, deliveryMethod);
         this.type = type;
+        this.name = getDisplayName(type);
     }
 
     private static Size getSize(BannerSize bannerSize) {
@@ -46,7 +48,7 @@ public class Banner extends ApertureProduct {
         return price;
     }
 
-    /*static private String getDisplayName(BannerType bannerType) {
+    static private String getDisplayName(BannerType bannerType) {
         String name = "";
         switch (bannerType) {
             case GLOSS:
@@ -60,7 +62,11 @@ public class Banner extends ApertureProduct {
                 break;
         }
         return name;
-    }*/
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public BannerType getType() {
         return type;

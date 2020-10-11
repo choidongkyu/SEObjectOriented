@@ -1,16 +1,17 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Stamp extends Product {
-    private String name;
     private String text;
     private StampSize stampSize;
     private StampColor stampColor;
+    private String name;
 
     public Stamp(StampSize stampSize, StampColor stampColor, DeliveryMethod deliveryMethod, String text) {
         super(getSize(stampSize), getPrice(stampSize), getColor(stampColor), deliveryMethod);
         this.stampSize = stampSize;
         this.stampColor = stampColor;
         this.text = text;
+        this.name = "Stamp";
     }
 
 
@@ -74,5 +75,9 @@ public class Stamp extends Product {
 
     public StampColor getStampColor() {
         return stampColor;
+    }
+
+    public String getName() {
+        return name;
     }
 }

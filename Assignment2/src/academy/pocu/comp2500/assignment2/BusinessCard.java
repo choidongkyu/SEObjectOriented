@@ -3,6 +3,7 @@ package academy.pocu.comp2500.assignment2;
 public class BusinessCard extends ApertureProduct {
     private BusinessCardSides businessCardSides;
     private BusinessCardType type;
+    private String name;
 
     public BusinessCard(BusinessCardType businessCardType, BusinessCardColor businessCardColor,
                         BusinessCardSides businessCardSides, Orientation orientation, DeliveryMethod deliveryMethod) {
@@ -10,6 +11,7 @@ public class BusinessCard extends ApertureProduct {
                 getColor(businessCardColor), orientation, deliveryMethod);
         this.businessCardSides = businessCardSides;
         this.type = businessCardType;
+        this.name = getDisplayName(businessCardType);
     }
 
     private static int getPrice(BusinessCardType businessCardType, BusinessCardSides businessCardSides) {
@@ -61,7 +63,7 @@ public class BusinessCard extends ApertureProduct {
         return color;
     }
 
-    /*static private String getDisplayName(BusinessCardType businessCardType) {
+    static private String getDisplayName(BusinessCardType businessCardType) {
         String name = "";
         switch (businessCardType) {
             case LINEN:
@@ -75,7 +77,11 @@ public class BusinessCard extends ApertureProduct {
                 break;
         }
         return name;
-    }*/
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public BusinessCardSides getBusinessCardSides() {
         return businessCardSides;
