@@ -5,10 +5,11 @@ public class Stamp extends Product {
     private StampSize stampSize;
     private StampColor stampColor;
 
-    public Stamp(StampSize stampSize, StampColor stampColor, DeliveryMethod deliveryMethod) {
+    public Stamp(StampSize stampSize, StampColor stampColor, DeliveryMethod deliveryMethod, TextAperture textAperture) {
         super(getSize(stampSize), getPrice(stampSize), getColor(stampColor), deliveryMethod);
         this.stampSize = stampSize;
         this.stampColor = stampColor;
+        this.textAperture = setTextAperture(textAperture);
     }
 
 
@@ -62,17 +63,17 @@ public class Stamp extends Product {
     }
 
 
-    public void setTextAperture(TextAperture textAperture) {
+    private TextAperture setTextAperture(TextAperture textAperture) {
         if (textAperture.getX() + textAperture.getSize().getWidth() <= 0 ||
                 textAperture.getX() >= super.size.getWidth()) {
-            return;
+            return null;
         }
 
         if (textAperture.getY() + textAperture.getSize().getHeigth() <= 0 ||
                 textAperture.getY() >= super.size.getHeigth()) {
-            return;
+            return null;
         }
-        this.textAperture = textAperture;
+        return textAperture;
     }
 
     public TextAperture getTextAperture() {
