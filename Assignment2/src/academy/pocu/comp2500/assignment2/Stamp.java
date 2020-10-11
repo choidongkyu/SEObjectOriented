@@ -1,6 +1,7 @@
 package academy.pocu.comp2500.assignment2;
 
 public class Stamp extends Product {
+    private String name;
     private String text;
     private StampSize stampSize;
     private StampColor stampColor;
