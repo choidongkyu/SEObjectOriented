@@ -5,7 +5,7 @@ public class Banner extends ApertureProduct {
     private String name;
 
     public Banner(BannerType type, BannerSize bannerSize, Color color, Orientation orientation, DeliveryMethod deliveryMethod) {
-        super(getSize(bannerSize), getPrice(bannerSize), color, orientation, deliveryMethod);
+        super(getSize(bannerSize), getPrice(bannerSize, type), color, orientation, deliveryMethod);
         this.type = type;
         this.name = getDisplayName(type);
     }
@@ -29,20 +29,31 @@ public class Banner extends ApertureProduct {
         return size;
     }
 
-    static private int getPrice(BannerSize bannerSize) {
+    static private int getPrice(BannerSize bannerSize, BannerType bannerType) {
         int price = 0;
-        switch (bannerSize) {
-            case SMALL:
-                price = 5000;
+        switch (bannerType) {
+            case GLOSS:
+                if (bannerSize == BannerSize.SMALL) {
+                    price = 5000;
+                } else if (bannerSize == BannerSize.MEDIUM) {
+                    price = 5200;
+                } else if (bannerSize == BannerSize.LARGE) {
+                    price = 5300;
+                } else {
+                    price = 6000;
+                }
                 break;
-            case MEDIUM:
-                price = 5200;
-                break;
-            case LARGE:
-                price = 5300;
-                break;
-            case EXTRALARGE:
-                price = 6000;
+            case SCRIM:
+            case MESH:
+                if (bannerSize == BannerSize.SMALL) {
+                    price = 5100;
+                } else if (bannerSize == BannerSize.MEDIUM) {
+                    price = 5300;
+                } else if (bannerSize == BannerSize.LARGE) {
+                    price = 5400;
+                } else {
+                    price = 6100;
+                }
                 break;
         }
         return price;
