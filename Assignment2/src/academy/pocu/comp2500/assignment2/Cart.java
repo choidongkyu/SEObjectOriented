@@ -33,4 +33,8 @@ public class Cart {
         }
         return price;
     }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
 }
