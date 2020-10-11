@@ -6,7 +6,7 @@ public class Product {
     private Color color;
     private DeliveryMethod deliveryMethod;
 
-    public Product(Size size, int price, Color color, DeliveryMethod deliveryMethod) {
+    private Product(Size size, int price, Color color, DeliveryMethod deliveryMethod) {
         this.size = size;
         this.price = price;
         this.color = color;
