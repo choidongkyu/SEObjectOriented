@@ -1,24 +1,16 @@
 package academy.pocu.comp2500.lab6;
 
-import java.util.ArrayList;
-
-public class Pizza {
-    protected ArrayList<Topping> toppings;
+public class Combo {
     private int price;
     protected boolean isAdded;
 
-    public Pizza(int price) {
-        this.toppings = new ArrayList<>();
+    public Combo(int price) {
         this.price = price;
         this.isAdded = false;
     }
 
     public int getPrice() {
         return this.price;
-    }
-
-    public ArrayList<Topping> getToppings() {
-        return this.toppings;
     }
 
     public boolean isValid() {

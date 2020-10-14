@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class MeatLoverPizza extends Pizza{
     private static final int PRICE = 21;
-    private boolean isVeggieAdded;
 
     public MeatLoverPizza() {
         super(PRICE);
@@ -15,17 +14,13 @@ public class MeatLoverPizza extends Pizza{
         this.toppings.add(Topping.CHEDDAR_CHEESE);
     }
 
-    public boolean isValid() {
-        return this.isVeggieAdded;
-    }
-
     public boolean addBlackOlives() {
         if (isValid()) {
             return false;
         }
 
         this.toppings.add(Topping.BLACK_OLIVES);
-        this.isVeggieAdded = true;
+        super.isAdded = true;
         return true;
     }
 
@@ -33,7 +28,7 @@ public class MeatLoverPizza extends Pizza{
         boolean isRemoved = this.toppings.remove(Topping.BLACK_OLIVES);
 
         if (isRemoved) {
-            this.isVeggieAdded = false;
+            super.isAdded = false;
         }
 
         return isRemoved;
@@ -45,7 +40,7 @@ public class MeatLoverPizza extends Pizza{
         }
 
         this.toppings.add(Topping.RED_ONIONS);
-        this.isVeggieAdded = true;
+        super.isAdded = true;
         return true;
     }
 
@@ -53,7 +48,7 @@ public class MeatLoverPizza extends Pizza{
         boolean isRemoved = this.toppings.remove(Topping.RED_ONIONS);
 
         if (isRemoved) {
-            this.isVeggieAdded = false;
+            super.isAdded = false;
         }
 
         return isRemoved;
@@ -65,7 +60,7 @@ public class MeatLoverPizza extends Pizza{
         }
 
         this.toppings.add(Topping.GREEN_PEPPERS);
-        this.isVeggieAdded = true;
+        super.isAdded = true;
         return true;
     }
 
@@ -73,7 +68,7 @@ public class MeatLoverPizza extends Pizza{
         boolean isRemoved = this.toppings.remove(Topping.GREEN_PEPPERS);
 
         if (isRemoved) {
-            this.isVeggieAdded = false;
+            super.isAdded = false;
         }
 
         return isRemoved;

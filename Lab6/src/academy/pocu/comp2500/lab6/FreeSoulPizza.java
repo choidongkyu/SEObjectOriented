@@ -14,7 +14,7 @@ public class FreeSoulPizza extends Pizza{
     }
 
 
-    public boolean isValid() {
+    private boolean isMax() {
         return this.meatCount == MAX_MEAT_COUNT
                 && this.veggieCount == MAX_VEGGIE_COUNT
                 && this.isCheeseAdded;
@@ -40,7 +40,7 @@ public class FreeSoulPizza extends Pizza{
         if (isCheese(topping)) {
             this.isCheeseAdded = true;
         }
-
+        super.isAdded = isMax();
         return true;
     }
 
@@ -60,7 +60,7 @@ public class FreeSoulPizza extends Pizza{
                 this.isCheeseAdded = false;
             }
         }
-
+        super.isAdded = isMax();
         return isRemoved;
     }
 

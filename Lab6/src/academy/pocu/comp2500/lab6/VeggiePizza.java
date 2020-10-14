@@ -13,7 +13,7 @@ public class VeggiePizza extends Pizza {
         this.toppings.add(Topping.GREEN_PEPPERS);
     }
 
-    public boolean isValid() {
+    private boolean isMax() {
         return this.cheeseCount == MAX_CHEESE_COUNT;
     }
 
@@ -24,6 +24,7 @@ public class VeggiePizza extends Pizza {
 
         this.toppings.add(Topping.MOZZARELLA_CHEESE);
         ++this.cheeseCount;
+        super.isAdded = isMax();
         return true;
     }
 
@@ -33,7 +34,7 @@ public class VeggiePizza extends Pizza {
         if (isRemoved) {
             --this.cheeseCount;
         }
-
+        super.isAdded = isMax();
         return isRemoved;
     }
 
@@ -53,7 +54,7 @@ public class VeggiePizza extends Pizza {
         if (isRemoved) {
             --this.cheeseCount;
         }
-
+        super.isAdded = isMax();
         return isRemoved;
     }
 
@@ -64,6 +65,7 @@ public class VeggiePizza extends Pizza {
 
         this.toppings.add(Topping.FETA_CHEESE);
         ++this.cheeseCount;
+        super.isAdded = isMax();
         return true;
     }
 
@@ -73,7 +75,7 @@ public class VeggiePizza extends Pizza {
         if (isRemoved) {
             --this.cheeseCount;
         }
-
+        super.isAdded = isMax();
         return isRemoved;
     }
 }
