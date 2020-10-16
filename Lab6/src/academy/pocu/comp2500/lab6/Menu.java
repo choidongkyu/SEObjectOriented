@@ -4,7 +4,7 @@ public class Menu {
     private int price;
     protected boolean isAdded;
 
-    public Menu(int price) {
+    protected Menu(int price) {
         this.price = price;
         this.isAdded = false;
     }

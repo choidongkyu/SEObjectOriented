@@ -7,7 +7,7 @@ public class Combo extends Menu {
     protected ArrayList<Dessert> desserts;
     protected MainCourse mainCourse;
 
-    public Combo(int price) {
+    protected Combo(int price) {
         super(price);
         appetizers = new ArrayList<>();
         desserts = new ArrayList<>();
