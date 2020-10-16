@@ -1,19 +1,28 @@
 package academy.pocu.comp2500.lab6;
 
-public class Combo {
-    private int price;
-    protected boolean isAdded;
+import java.util.ArrayList;
+
+public class Combo extends Menu {
+    protected ArrayList<Appetizer> appetizers;
+    protected ArrayList<Dessert> desserts;
+    protected MainCourse mainCourse;
 
     public Combo(int price) {
-        this.price = price;
-        this.isAdded = false;
+        super(price);
+        appetizers = new ArrayList<>();
+        desserts = new ArrayList<>();
     }
 
-    public int getPrice() {
-        return this.price;
+
+    public ArrayList<Appetizer> getAppetizers() {
+        return appetizers;
     }
 
-    public boolean isValid() {
-        return isAdded;
+    public ArrayList<Dessert> getDesserts() {
+        return desserts;
+    }
+
+    public MainCourse getMainCourse() {
+        return mainCourse;
     }
 }
