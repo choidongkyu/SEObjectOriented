@@ -23,7 +23,7 @@ public class Combo extends Menu {
         return desserts;
     }
 
-    public ArrayList<MainCourse> getMainCourse() {
+    public ArrayList<MainCourse> getMainCourses() {
         return mainCourses;
     }
 }
