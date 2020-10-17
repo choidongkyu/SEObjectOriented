@@ -2,7 +2,7 @@ package academy.pocu.comp2500.lab6;
 
 import java.util.ArrayList;
 
-public class NoHeavyMeal extends Combo{
+public class NoHeavyMeal extends Combo {
     private static final int PRICE = 15;
 
     private ArrayList<Appetizer> appetizers = new ArrayList<>();

@@ -2,7 +2,7 @@ package academy.pocu.comp2500.lab6;
 
 import java.util.ArrayList;
 
-public class MeatLoverPizza extends Pizza{
+public class MeatLoverPizza extends Pizza {
     private static final int PRICE = 21;
 
     public MeatLoverPizza() {
