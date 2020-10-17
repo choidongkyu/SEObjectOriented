@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Combo extends Menu {
     protected ArrayList<Appetizer> appetizers;
     protected ArrayList<Dessert> desserts;
-    protected MainCourse mainCourse;
+    protected ArrayList<MainCourse> mainCourses;
 
     protected Combo(int price) {
         super(price);
@@ -22,7 +22,7 @@ public class Combo extends Menu {
         return desserts;
     }
 
-    public MainCourse getMainCourse() {
-        return mainCourse;
+    public ArrayList<MainCourse> getMainCourse() {
+        return mainCourses;
     }
 }

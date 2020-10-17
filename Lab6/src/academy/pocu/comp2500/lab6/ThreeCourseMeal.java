@@ -8,12 +8,16 @@ public class ThreeCourseMeal extends Combo {
     }
 
     private boolean isMax() {
-        return super.appetizers.size() != 0 && super.mainCourse != null && super.desserts.size() != 0;
+        return super.appetizers.size() != 0 && super.mainCourses.size() != 0 && super.desserts.size() != 0;
     }
 
 
     public void setMainCourse(MainCourse mainCourse) {
-        this.mainCourse = mainCourse;
+        if (super.mainCourses.size() == 0) {
+            super.mainCourses.add(mainCourse);
+        } else {
+            super.mainCourses.set(0, mainCourse);
+        }
         super.isAdded = isMax();
     }
 

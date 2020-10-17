@@ -8,7 +8,7 @@ public class DeathByDesserts extends Combo {
     public DeathByDesserts() {
         super(PRICE);
     }
-    
+
 
     public void setDesserts(Dessert dessert1, Dessert dessert2, Dessert dessert3, Dessert dessert4) {
         super.desserts.clear();
